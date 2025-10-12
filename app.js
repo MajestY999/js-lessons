@@ -1,14 +1,16 @@
-/*  if else */
-const money = 100;
-//const canBuy = money > 50;  //если меньше false   Этот код равносилен коду ниже точнее код ниже равносилен коду как тут
+const depositMoney = 12000;
+yearProcent = 0.07;
+bankContribution = 24;
+homePrice = 13500;
 
-if (money > 50) {
-  console.log("Может купить наш продукт");
-} else if (money > 5) {
-  console.log(   /* Но если поставить например maney > 55 то он не выполнится так как он остановиться только на блоке if потому что он верен а если бы у нас было бы л=другое число то гапример 45 и блок был с задачей money > 45 то он бы выполнился  */ 
-    "Куплен mini продук"
+const bankMoney = depositMoney * (1 + yearProcent / 12) ** bankContribution;
+
+console.log(bankMoney);
+
+if (bankMoney >= homePrice) {
+  console.log(
+    "Вася может купить дом через 2 года. Ему хватает денег на свой дом"
   );
-} /* Происходит это событие если не выполняется блок выше  */ else {
-  console.log("Не хватает баланса");
+} else if (bankMoney  < homePrice) {
+  console.log("Вася не может купить дом через 2 года. Ему не хватает денег");
 }
-console.log("Итог");
