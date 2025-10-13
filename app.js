@@ -1,16 +1,14 @@
-const depositMoney = 12000;
-yearProcent = 0.07;
-bankContribution = 24;
-homePrice = 13500;
+// Операторы равенства
+const secretNumber = 7; //но при использовании строкового типа, у нас будет отрабатываться блок,  только с не строгим  сравнением
+//Но чтобы строковый тип работал в строгом сравнение нужно его сделать число через Number(secretNumber)
+if (secretNumber === 7) {
+  console.log("Угадал  строго");
+}
+if (secretNumber == 7) {
+  console.log("Угадал не строго");
+}
 
-const bankMoney = depositMoney * (1 + yearProcent / 12) ** bankContribution;
-
-console.log(bankMoney);
-
-if (bankMoney >= homePrice) {
-  console.log(
-    "Вася может купить дом через 2 года. Ему хватает денег на свой дом"
-  );
-} else if (bankMoney  < homePrice) {
-  console.log("Вася не может купить дом через 2 года. Ему не хватает денег");
+const q = Number(prompt("Введите число")); //Здесь нужно приводить к виду числа так как prompt преобразовывает числа в строки  значения написанные в prompt
+if (q === 7) {
+  console.log("!");
 }
