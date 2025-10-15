@@ -1,20 +1,19 @@
-// Логические операторы 
-const isAdmin = true; // парава изменения файла
-const  canWrite = true; // право писать 
-const isUser = true;
+//Операторы с другими типами 
+console.log('Вася' || 'Олег'); // Выведется Вася
+console.log(false || 'Олег'); //Выведется Олег 
+console.log('Вася' || false ); //Выведется Вася
+console.log(false || false); // false
 
-console.log(`Системный файл ${isAdmin && canWrite}`); // и 
-console.log(`Обычный файл ${isAdmin || canWrite}`);  //или
-console.log(`Инвертируем права админа ${!isAdmin}`);
+console.log('Вася' && 'Олег'); // Олег так как первый элемент true
+console.log(false && 'Олег'); //false
+console.log('Вася' && false); //false
+console.log(false && false); //false
 
-const isEdited = true;
-const isSuperAdmin = true;
+let a;
+const userName = a || 'Петя';
+console.log(userName);
 
-console.log(`Системный файл  с редактированием ${
-    isAdmin && canWrite && (!isEdited || isSuperAdmin)/* стал false */
-}`);
 
-let a = 7;
-if(a == -8 || a === 22) {
-    console.log();
-}
+const isAdmin = true;
+const fileName = isAdmin && 'file.mp4'
+console.log(fileName);
