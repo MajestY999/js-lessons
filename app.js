@@ -1,19 +1,9 @@
-//Операторы с другими типами 
-console.log('Вася' || 'Олег'); // Выведется Вася
-console.log(false || 'Олег'); //Выведется Олег 
-console.log('Вася' || false ); //Выведется Вася
-console.log(false || false); // false
-
-console.log('Вася' && 'Олег'); // Олег так как первый элемент true
-console.log(false && 'Олег'); //false
-console.log('Вася' && false); //false
-console.log(false && false); //false
-
-let a;
-const userName = a || 'Петя';
-console.log(userName);
+//Операторы нулевого слияния 
+let userName = 0;
+console.log(userName || 'Default Username'); //Если просто использован оператор let или null, undefiend, или '', то у нас в консоле будет отображаться  Default userName
+console.log(userName ?? 'Default Username');
 
 
-const isAdmin = true;
-const fileName = isAdmin && 'file.mp4'
-console.log(fileName);
+let age = 0
+console.log(age || 18);// тут получаем 18 так как он определяет 0 как false и поэтому выводит 18, поэтому лучше использовать ?? так как он работает корректнее чем ||
+console.log(age ?? 18);//0 Используем этот оператор так как он работает корректнее
