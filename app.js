@@ -1,25 +1,23 @@
-//Упражнение - проверка прав
-/* 
-Задача:
-Определить, может ли пользователь купить игру в интернет-магазине (например, Steam) на основании четырех условий.
-Условия:
-Баланс пользователя более 1000 рублей или более 100 бонусов.
-Пользователь не забанен в магазине.
-Игра не куплена ранее пользователем.
-Игра доступна в продаже.
-*/
+// Введение в функции
+function logName(name, surename){
+     console.log(`Мое имя Артем ${name} ${surename}`);
 
-const gameAvailable = true 
-const gameNotBuy = true 
-const gamerNotBanned = true 
-const marketWallet = 100
-const userBonus = 50
-
-if ((marketWallet >= 1000 || userBonus >= 100) && gamerNotBanned === true && gameAvailable === true && gameNotBuy === true) {
-    console.log('Пользователь может купить игру');
-} else {
-    console.log('Пользователь не может приобрести игру');
 }
 
+/* const a = logName();
+console.log(typeof a); //undefiend */
+logName('Артем', 'Вилисов');
+
+function countDepositSum(depositInUSD, month, rate ){
+ const sum = depositInUSD * (1 + rate / 12) ** month
+  return sum;
+}
+
+const example1 = countDepositSum(1000, 24, 0.12)
+console.log(example1);
+
+/* const  example2 = countDepositSum(1000, 48, 0.10) */
+
+console.log(countDepositSum(1000, 48, 0.10)); //тот же результат просто мы не вложим эти данные в доп ячейку с данными как в верхнем примере.
 
 
