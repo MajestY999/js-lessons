@@ -1,23 +1,14 @@
-// Введение в функции
-function logName(name, surename){
-     console.log(`Мое имя Артем ${name} ${surename}`);
+//Анонимные функции
 
+function powerOfTwo(num/* тут мы принимаем какое либо число */){
+    return num * num
 }
+console.log(powerOfTwo(5));// Тут мы можем console.log перенести на верх так как у нас есть функция всплытия, но у константной функции такого нету, потому что она еще не обьявлена.
 
-/* const a = logName();
-console.log(typeof a); //undefiend */
-logName('Артем', 'Вилисов');
-
-function countDepositSum(depositInUSD, month, rate ){
- const sum = depositInUSD * (1 + rate / 12) ** month
-  return sum;
+const poft = function(num){    //Тут уже анонимная функция, потому что у нее нет так какового названия, так как начинается с const.
+return num * num
 }
+console.log(poft(6)); //тут теперь можно сказать что const стал функцией которую мы теперь вызываем.  
 
-const example1 = countDepositSum(1000, 24, 0.12)
-console.log(example1);
-
-/* const  example2 = countDepositSum(1000, 48, 0.10) */
-
-console.log(countDepositSum(1000, 48, 0.10)); //тот же результат просто мы не вложим эти данные в доп ячейку с данными как в верхнем примере.
-
+//Таккже мы можем класть функцию как аргумент, какой-либо функции или из функции возвращать функцию, как мы оперируем числом.
 
