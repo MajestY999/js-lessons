@@ -1,17 +1,20 @@
-// Стрелочные функции
-function powerOfTwo(num){
-    console.log(num); //логирование
-    return num * num;
+// Упражнение - Упращение функции.
+
+
+function toPowerMass (weidth, height){
+return weidth ** height
 }
-console.log(powerOfTwo(5));
 
-//Стрелочная функция
-const poft = num  => {  /* если будет больше 1 значения то уже нужны скобки, но если тольеко 1 значение то можно и скобки убрать. */
-    console.log(num); // 6
-    return   num * num 
-} //опустили ключевое слово function. Также если не достаточно одной строки то можно просто записать  в скобки {} и туда мы сможем добавить все что угодно
-console.log(poft(6));
 
-const poFt = num => num * num;  //Обычная стрелочная функция.
-console.log(poFt(11));
+console.log(toPowerMass(5, 12));
+
+const toPowerArrow = (strength, mass) => {
+   return strength ** mass
+} //мог просто убрать {} и тогда можно было и не исользовать return 
+console.log(toPowerArrow(4, 5));
+
+const bankProcent = (balance, procent) => 
+    balance ** procent 
+
+console.log(bankProcent(1500, 0.05))
 
