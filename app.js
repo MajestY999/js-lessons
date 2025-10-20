@@ -1,11 +1,15 @@
-function toPower(num = 4, power = 2){ //Но  также мы можем передавать дефолтные значения по умолчанию у нашей функции, то есть если мы не передадим внутри функции или снаружи значения элементу, то тогда будет использоваться тот который в скобках.
-//console.log(typeof power); // undefined 
-//const power2 = power ?? 2; //в итоге результат у нас будет такой, что при вызове console.log((2)), будет выводиться значение 4
-//const res = num ** power2;
-const res = num ** power;
-return res;
+//Условия в функциях 
+function canAccessWebSite(age){
+  if(age < 18){ 
+    return 'Нет';//false
+  }  { //можно убрать else и все будет точно также как и с ней.
+    return 'Да'; //true
+  }
 }
+console.log(canAccessWebSite(18));
+//Ниже пример использования и повторения тернарных операторов.
+const canAccessWebSite2 = age => age < 18 ?/* знак означает: тогда */ 'Нет'  /* или Да если первое условие не подходит */: 'Да';
+console.log(canAccessWebSite2(18));
 
-console.log(toPower(2, 3));  // а тут power: Number
-console.log(toPower(2)); //Вывод будет NaN потому что у нас есть значение только одного элемента в виде 2, а точнее num = 2, а  power = undefaiend
-console.log(toPower()); //Выведет 16 так как у нас есть дефолтные значения 4 и 2, которые как раз будут использоваться в выражении.
+
+
