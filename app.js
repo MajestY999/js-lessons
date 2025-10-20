@@ -1,20 +1,11 @@
-// Упражнение - Упращение функции.
-
-
-function toPowerMass (weidth, height){
-return weidth ** height
+function toPower(num = 4, power = 2){ //Но  также мы можем передавать дефолтные значения по умолчанию у нашей функции, то есть если мы не передадим внутри функции или снаружи значения элементу, то тогда будет использоваться тот который в скобках.
+//console.log(typeof power); // undefined 
+//const power2 = power ?? 2; //в итоге результат у нас будет такой, что при вызове console.log((2)), будет выводиться значение 4
+//const res = num ** power2;
+const res = num ** power;
+return res;
 }
 
-
-console.log(toPowerMass(5, 12));
-
-const toPowerArrow = (strength, mass) => {
-   return strength ** mass
-} //мог просто убрать {} и тогда можно было и не исользовать return 
-console.log(toPowerArrow(4, 5));
-
-const bankProcent = (balance, procent) => 
-    balance ** procent 
-
-console.log(bankProcent(1500, 0.05))
-
+console.log(toPower(2, 3));  // а тут power: Number
+console.log(toPower(2)); //Вывод будет NaN потому что у нас есть значение только одного элемента в виде 2, а точнее num = 2, а  power = undefaiend
+console.log(toPower()); //Выведет 16 так как у нас есть дефолтные значения 4 и 2, которые как раз будут использоваться в выражении.
