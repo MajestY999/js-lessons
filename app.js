@@ -1,54 +1,27 @@
-// Упражнение -- Кредит на макбук
+//Знакомство с массивами.
+const role1 = 'admin';
+const role2 = 'user';
+const role3 = 'superUser';
 
-/* 
-Нужно проверить может ли он купить новый MacBook за 2000$? 
-Он может брать не только свои деньги, но и взять кредит.
-Ему дадут 500$, только если ему больше 24-х лет и он имеет работу,
- 100$ если ему просто больше 24-х лет и 0 в ином случае. 
-Напишите функцию, которая принимает данные пользователя и товара и возвращает true или false.
-*/
+const roles = [  'admin', 'user', 'superUser' ]; 
+const userInfo = ['Аня', 25 ];
+console.log(roles);
+console.log(roles[0]);// admin
+//Как получить последний элемент массива если не знаем сколько их.
+console.log(roles.length);//3
+console.log(roles[roles.length - 1]); // ну тут база 3 - 1 получаем id последнего элемента 
 
-const creditMoney500 = 500
-const creditMoney100 = 100
-const PriceMacBook = 2000
+console.log(roles.at(0)); //admin 
+console.log(roles.at(-1));//тоже самое как с roles.length -1. Получим supeUser
 
+const usersAge = [2040 - 2022, 20 - '6', /* тут конкатенация строк. */ 10 > 0 ? 5 : 0] //но тут мы  можем использовать тернарный оператор
+console.log(usersAge);
 
-function canBuyMacBookAndtakeCredit(age, haveWork)
-{  if(age >= 24 && haveWork )
-  {
-     return creditMoney500
-  } 
-  else if( age >= 24 && !haveWork){ 
-    return creditMoney100
-  }
-   else { 
-    return 0 
-  } 
+const userNames = new Array('Вася', 'Петя', 'Катя');
+console.log(userNames);
+
+function squer(el){
+ return el * el;
 }
 
-function canBuyMac(age, haveWork, money) {
-  return money + canBuyMacBookAndtakeCredit(age, haveWork) >= PriceMacBook;
-}
-console.log(canBuyMac(25, false, 1900)); // Если написать значения  возраст: 25, есть работа или нет: true || false, и денги например 1800, но цена макбука 2000, а у нас только с кредитом например 1900(Короче просто потому что денег у нас будет меньше чем цена мака. вот поэтому фалс,а если бы было бы даже больше например у нас есть 1900 с кредитом будет 2400, короче вот так.), то выведется false, так как у нас денег мне как по функции то есть   return money + canBuyMacBookAndtakeCredit(age, haveWork) >= PriceMacBook, тут понятно что если у нас будет мало денег то будет уже false.  как и с возрастом также.
-
-
-
-//Пример преподавателя
-
-function  computeCredit(age, hasJob = false) {
-  switch(true){
-    case age > 24 && hasJob:
-      return 500;
-    case age > 24:
-      return 100;
-      default:
-        return 0;
-  }
-}
-
-function canBuy(productPrice, age, hasJob, money) {
-  const creditMoney = computeCredit(age, hasJob);
-  return productPrice  <= money + creditMoney
-}
-
-console.log(canBuy(2000, 25, true, 1500));
+console.log(squer(5)); //console.log(squer([1, 2, 3])); Будет NaN так как у нас работа с массивами а не числами, таким образом нам нельзя так делать
