@@ -1,15 +1,22 @@
-//Условия в функциях 
-function canAccessWebSite(age){
-  if(age < 18){ 
-    return 'Нет';//false
-  }  { //можно убрать else и все будет точно также как и с ней.
-    return 'Да'; //true
-  }
+// Функции в функциях.
+
+const KG_IN_USD = 7;
+const KM_IN_ISD = 5;
+
+function calculateW(present){
+  
+   return present * KG_IN_USD;
 }
-console.log(canAccessWebSite(18));
-//Ниже пример использования и повторения тернарных операторов.
-const canAccessWebSite2 = age => age < 18 ?/* знак означает: тогда */ 'Нет'  /* или Да если первое условие не подходит */: 'Да';
-console.log(canAccessWebSite2(18));
 
+function calculateKm(distance){
+   return distance * KM_IN_ISD;
+}
 
+function getExchangePrice(present1, present2, distance) {
+    const  price1 = calculateW(present1); 
+    const price2 = calculateW(present2);
+    const distancePrice = calculateKm(distance)
+    return price1 + price2 + distancePrice;
+}
 
+console.log(getExchangePrice(1, 2, 10));
