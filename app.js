@@ -1,27 +1,25 @@
-//Знакомство с массивами.
-const role1 = 'admin';
-const role2 = 'user';
-const role3 = 'superUser';
+//Управление элементами массива
+const users = ['Аня', 'Вика', 'Катя']
+console.log(users);
+users[2] = 'Кристина' //Присвоили второму элементу значение Кристина
+console.log(users);
+// users[3] = 'Никита' //Стал 4 элементом так как мы указали id 3
+// console.log(users);
+//добавление 
+const arrLength = users.push('Никита'); //Если вдруг нужно будет получить новую длинну нашего массива, то может, просто положить const arrLength или просто константу с названием.
+console.log(users); //Все тоже самое как с users[3] = 'Никита', только все короче.
+console.log(arrLength);
 
-const roles = [  'admin', 'user', 'superUser' ]; 
-const userInfo = ['Аня', 25 ];
-console.log(roles);
-console.log(roles[0]);// admin
-//Как получить последний элемент массива если не знаем сколько их.
-console.log(roles.length);//3
-console.log(roles[roles.length - 1]); // ну тут база 3 - 1 получаем id последнего элемента 
+//Добавление элементов в начало
+users.unshift('Вася')//Добавляет в самое начало в массива
+console.log(users);//Теперь размер массива стал 5 
 
-console.log(roles.at(0)); //admin 
-console.log(roles.at(-1));//тоже самое как с roles.length -1. Получим supeUser
+//Удаление элементов массива
+const el = users.pop();//Удалил последний элемент 'Никита'
+console.log(el); //тут также через константу мы можем узнать какой элемент был удален и являлся последним.
+console.log(users);
 
-const usersAge = [2040 - 2022, 20 - '6', /* тут конкатенация строк. */ 10 > 0 ? 5 : 0] //но тут мы  можем использовать тернарный оператор
-console.log(usersAge);
-
-const userNames = new Array('Вася', 'Петя', 'Катя');
-console.log(userNames);
-
-function squer(el){
- return el * el;
-}
-
-console.log(squer(5)); //console.log(squer([1, 2, 3])); Будет NaN так как у нас работа с массивами а не числами, таким образом нам нельзя так делать
+// shift Удаляет первый элемент массива
+const el2 = users.shift()
+console.log(el2);
+console.log(users);
