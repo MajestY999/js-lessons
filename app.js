@@ -33,19 +33,22 @@ console.log(canBuyMac(25, false, 1900)); // Если написать значе
 
 
 
+//Пример преподавателя
 
-// function credit(age, haveWork,){
-//   if(age >= 24 && haveWork){
-//  return  `${creditMoney500}`
-//   } else if(age >= 24 && !haveWork){
-//       return  ` ${creditMoney100}`
-//   } else {
-//     return  0 
-//   }
-// } 
+function  computeCredit(age, hasJob = false) {
+  switch(true){
+    case age > 24 && hasJob:
+      return 500;
+    case age > 24:
+      return 100;
+      default:
+        return 0;
+  }
+}
 
-//  function canBuyMac(age, haveWork, money) {
-//   return money + credit(age, haveWork) >= PriceMacBook;
-// }
-// console.log(canBuyMac(25, false, 1900));
- 
+function canBuy(productPrice, age, hasJob, money) {
+  const creditMoney = computeCredit(age, hasJob);
+  return productPrice  <= money + creditMoney
+}
+
+console.log(canBuy(2000, 25, true, 1500));
