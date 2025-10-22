@@ -1,25 +1,22 @@
-//Управление элементами массива
-const users = ['Аня', 'Вика', 'Катя']
-console.log(users);
-users[2] = 'Кристина' //Присвоили второму элементу значение Кристина
-console.log(users);
-// users[3] = 'Никита' //Стал 4 элементом так как мы указали id 3
-// console.log(users);
-//добавление 
-const arrLength = users.push('Никита'); //Если вдруг нужно будет получить новую длинну нашего массива, то может, просто положить const arrLength или просто константу с названием.
-console.log(users); //Все тоже самое как с users[3] = 'Никита', только все короче.
-console.log(arrLength);
+//Поиск элемента 
+const roles = ['user', 'admin', 'manager'];
 
-//Добавление элементов в начало
-users.unshift('Вася')//Добавляет в самое начало в массива
-console.log(users);//Теперь размер массива стал 5 
+//спец методы которые могут искать по самому массиву
+//onsole.log(roles.indexOf('admin'));//1
+const elIndex = roles.indexOf('admin');
+console.log(elIndex);//тоже 1
+//indexOf работает так что  он ищет первое вхождение в массиве, если нашел то все отлично
+const elIndex2 = roles.indexOf('superuser') //-1 так как этого элемента не существует
+console.log(elIndex2);
 
-//Удаление элементов массива
-const el = users.pop();//Удалил последний элемент 'Никита'
-console.log(el); //тут также через константу мы можем узнать какой элемент был удален и являлся последним.
-console.log(users);
+if (roles.indexOf('admin') >= 0){
+    console.log('Доступ есть');
+}
 
-// shift Удаляет первый элемент массива
-const el2 = users.shift()
-console.log(el2);
-console.log(users);
+console.log(roles.includes('admin'));//includes возвращает true или false
+console.log(roles.includes('superuser'));//false
+
+if(roles.includes('admin')){
+    console.log('Доступ есть');
+}
+
