@@ -1,10 +1,38 @@
-//Из строки в массив и обратно
+//Упражнение- Обновление списка задач
 
-const  roles = ['user', 'admin', 'manager', 'superuser'];
+const tasks = ['Задача 1'];
 
-const url = 'auth/user/login'
-const res = url.split('/')// то есть мы разбили нашу исходную строку на массив. (3) ['auth', 'user', 'login']. Это метод строки который позволяет преобразовывать исходный url к массиву.
-console.log(res);
 
-//в обратную сторону. 
-console.log(roles.join('-')) //обьеденение элементов в строку user-admin-manager-superuser 
+
+// const addTask  = () => {}
+
+  function Add(task) {
+        tasks.push(task)
+        
+    }
+
+    function Remove(task){
+        const index = task.indexOf(task)
+        if(index === 0) {
+            return;
+        }
+        tasks.splice(index, 1)
+    }
+
+    function  Priorutirize(task){
+      const index = task.indexOf(task);
+       if(index === -1) {
+            return;
+        }
+      const OldTask = tasks[index];
+       tasks.splice(index, 1);
+      tasks.unshift(OldTask);
+    }
+
+Add('Задача 2');
+Add('Задача 3')
+console.log(tasks);
+Remove('Задача 2')
+console.log(tasks);
+Priorutirize('Задача 3')
+console.log(tasks);
