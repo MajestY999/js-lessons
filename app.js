@@ -1,5 +1,13 @@
-//Rest операторы
+// Упражнение разбор url
 
-const data = [1, 2, 3, 4, 5, 6];
-const [one, two, ...others] = data//тут мы хотим получить данные от дата = знак равно это и обозначает. А также рест оператор мы можем использовать только в конце не в начале не в середине.
-console.log(one, two, others); // с помощью троеточия мы получили второй массив с остальными данными в виде (4) [3, 4, 5, 6]
+const url =  '<https://purpleschool.ru/course/javascript>'
+
+const getURL = () => {
+    url.split('/')
+}
+const destracturl = () => {
+ const [protocol, domain, ...path] = url.split('/')
+ return`${protocol.split('/')}//${domain}${path.join('/')}`
+}
+
+console.log(destracturl());
