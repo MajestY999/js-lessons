@@ -1,34 +1,15 @@
-//Принцип DRY -- do not repeat yourself
+// Диструктуризация.
+const userData = ['Антон', 18, 'Москва']
 
-const tasks = ['Задача 1'];
+function getData(){
+    return ['Антон', 18, 'Москва']
+}
 
-// const addTask  = () => {}
+// const userName = getData()[0];
+// const age = getData()[1];
+// const city = getData()[2]
 
-  function Add(task) {
-        tasks.push(task)
-        
-    }
+const [userName, _, city] = getData()//Это называется диструктуризацией когда мы можем в одной переменной написать все данные вместо того чтобы писать в 3 строчки с 3 константами
 
-    function Remove(task){
-        const index = task.indexOf(task)
-        if(index === -1) {
-            return;
-        }
-       return tasks.splice(index, 1)
-    }
-
-    function  Priorutirize(task){
-      const result = Remove(task);
-       if(!result) {
-        return;
-        }
-         tasks.unshift(result[0]);
-    }
-
-Add('Задача 2');
-Add('Задача 3');
-console.log(tasks);
-Remove('Задача 2')
-console.log(tasks);
-Priorutirize('Задача 3')
-console.log(tasks);
+console.log(userName,  city);//Антон 18 Москва
+//Также нижним подчеркиванием мы можем опускать какие-то данные чтобы их не использовать, а также нижнее подчеркивание можно использовать для обозначения данных.
