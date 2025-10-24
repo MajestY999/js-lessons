@@ -56,3 +56,59 @@ function PriorutirizeAdmin(admin){
 
 PriorutirizeAdmin('Ceo-admin')
 console.log(adminRoles);
+
+
+
+
+
+
+
+
+const Bankmoney = 9000;
+const monthinBank = 24;
+const procent = 0.07
+homePrice = 13500
+
+const Finalmoney =  Bankmoney*(1 + procent/12)**monthinBank
+
+if(Finalmoney >= homePrice){
+    console.log(`Вася может купить дом ${Finalmoney}`);
+} else if(Finalmoney < homePrice){
+    console.log(`Вася не может купить дом${Finalmoney}`);
+}
+
+
+const hourcost = 80
+const endWork = (11 - 2) * 5
+const availableHours3  = 40
+const moneyForProject = 80 * 45
+
+console.log(`Успею ли я законсить проект в срок ${endWork > availableHours3}`);// true 
+console.log(`Сколько заплатят за мой проект ${moneyForProject}`);
+
+
+// const  quest = (Number(prompt('Сколько будет 7 - 15 или 7 + 15')))
+
+// if( quest ===  22 ||  -8 ) {
+//     console.log(alert('Вы не робот'));
+// } else if (quest !== 22 || -8) {
+//     console.log(alert('Вы робот'));
+// }
+
+
+
+
+
+const gamerNotBanned = true;
+const gamerNotBuyGame = true;
+const gameIsAvailable = true;
+const WalletOnMarket = 100;
+const BonusWallet = 50;
+
+if((WalletOnMarket >= 1000 || BonusWallet >= 100) && gamerNotBanned === true && gamerNotBuyGame === true && gameIsAvailable === true) {
+    console.log('Вы  можете купить игру');
+} else  {
+ console.log('Вы не можете купить игру');
+}
+
+
