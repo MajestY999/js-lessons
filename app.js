@@ -1,38 +1,34 @@
-//Упражнение обновление списка задач
-const tasks= ['Задача 1']
+//Принцип DRY -- do not repeat yourself
 
-function addTask (task){
-    tasks.push(task)
-}
+const tasks = ['Задача 1'];
 
-function RemoveTask(task){
-  const index = tasks.indexOf(task)
-  if (index >= 0) {
-    tasks.splice(index, 1)
-  }
-}
+// const addTask  = () => {}
 
-function prioritizeTasks(task){
-    index = tasks.indexOf(task)
-    const indxAr = tasks[index]
-   tasks.splice(index, 1)
-    tasks.unshift(indxAr)
-}
+  function Add(task) {
+        tasks.push(task)
+        
+    }
 
-function hasTasks(task){
-return tasks.includes(task)
-}
+    function Remove(task){
+        const index = task.indexOf(task)
+        if(index === -1) {
+            return;
+        }
+       return tasks.splice(index, 1)
+    }
 
-addTask('Задача 2');
-addTask('Задача 3');
+    function  Priorutirize(task){
+      const result = Remove(task);
+       if(!result) {
+        return;
+        }
+         tasks.unshift(result[0]);
+    }
+
+Add('Задача 2');
+Add('Задача 3');
 console.log(tasks);
-
-RemoveTask('Задача 3')
+Remove('Задача 2')
 console.log(tasks);
-
-prioritizeTasks('Задача 2')
+Priorutirize('Задача 3')
 console.log(tasks);
-
-console.log(hasTasks('Задача 10'));//false
-console.log(tasks);
-console.log(hasTasks('Задача 1'));//true
