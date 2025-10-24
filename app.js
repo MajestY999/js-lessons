@@ -1,27 +1,16 @@
-//  Упражнение разбор Url
+//Цикл for
+// console.log('Наш баланс 1$');
+// console.log('Наш баланс 2$');
+// console.log('Наш баланс 3$');
+// console.log('Наш баланс 4$');
+// console.log('Наш баланс 5$');
+// console.log('Наш баланс 6$');
+// console.log('Наш баланс 7$');
+// console.log('Наш баланс 8$');
+// console.log('Наш баланс 9$');
+/* 1 часть  обьявление той или иной переменной которая принимает участие(и с которой в се начинается), 2 часть проверка условия когда наш цикл должен быть завершен, и 3 часть это действие с нашей переменной.  */
 
-const url =  ' <https://purpleschool.ru/course/javascript>'
-
-// const getURL = () => {
-//     url.split('/')
-// }
-
-const  sumUrl = () =>  {
-     const [protocol, domain, ...path ] = url.split('/')
-     return `${protocol.split('').join('')}//${domain}${path.join("/")}`
+for(let i = 1; i <= 10; i = i + 2 /* можно и написать i++*/){
+ console.log(`Наш баланс ${i}`);
 }
 
-
-console.log(sumUrl());
-
-
-
-
-// let array = [1, 2, 3, 4];
-// const res = array.push(5);
-// console.log(res);
-
-
-
-// let arr = ['1', '2', '3'];
-// console.log(arr.indexOf(1));
