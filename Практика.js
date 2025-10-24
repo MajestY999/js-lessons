@@ -28,3 +28,31 @@ console.log('Сколько мне заплатят за проет:', hourPay *
 
 
 
+
+
+const adminRoles = ['Admin', 'SuperAdmin', 'youngAdmin', 'sysAdmin']
+
+function deleteAdmin(deleteRoles){
+     adminRoles.shift(deleteRoles)//Можно тут прописать adminRoles как базу то есть основу, которая имеет массивы, с которой берем данные и можем прописать например эту функцию как добавление. 
+}
+
+function addAdmin(Admins){
+    adminRoles.push(Admins)
+}
+
+deleteAdmin('SuperAdmin')
+console.log(adminRoles);
+addAdmin('ГигаАдмин')//Тут же теперь мы с помощью элмента push мы делаем так что мы в конец добавляем наш элемент в конец, ии еще используем функцию.
+console.log(adminRoles);
+
+
+function PriorutirizeAdmin(admin){
+    const idAdmin = adminRoles.indexOf(admin)
+    if(idAdmin === -1)return;
+    const AdRole = adminRoles[admin];
+    adminRoles.splice(idAdmin, 1)
+    adminRoles.unshift(AdRole)
+}
+
+PriorutirizeAdmin('Ceo-admin')
+console.log(adminRoles);
