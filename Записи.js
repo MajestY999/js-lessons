@@ -515,3 +515,59 @@ for(let i = 1; i <= 20; i++ ){
 for(let i = 1; i< 10; i+= 3){
 console.log(`${i}`);
 }
+
+
+
+let i = 1; // 1. Инициализируем переменную i
+while (i <= 5) { // 2. Проверяем условие: пока i меньше или равно 5
+  console.log(i); // 3. Выводим значение i
+  i++; // 4. Увеличиваем i на 1
+}
+
+
+
+let numbers = [1, 2, 3, 4, 5];
+let target = 3;
+let found = false;
+let index = 0;
+
+while (index < numbers.length && !found) {
+  if (numbers[index] === target) {
+    found = true;
+  } else {
+    index++;
+  }
+}
+console.log(found ? "Элемент найден" : "Элемент не найден");
+
+
+
+let count = 1;
+
+do {
+  console.log(count); // Выводит 1, 2, 3, 4, 5
+  count++;
+} while (count <= 5);
+
+
+let count2 = 10;
+
+do {
+  console.log("Я выполнился один раз!");
+  count2++;
+} while (count2 <= 5);
+
+
+
+let fruits = ["Яблоко", "Банан", "Апельсин"];
+let ji = 0; // Инициализируем счётчик
+
+while (ji < fruits.length) { // Условие: цикл выполняется, пока i меньше длины массива
+  console.log(fruits[ji]); // Выводим элемент с текущим индексом
+  ji++; // Увеличиваем счётчик на 1
+}
+
+// Вывод в консоли:
+// Яблоко
+// Банан
+// Апельсин
