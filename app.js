@@ -1,77 +1,38 @@
-//Циклы в циклах
-// for(let i=1; i < 10; i++){
-//     console.log(`Цикл 1 - ${i}`);  //Будет идти Цикл 1 - 1 и т.д
-//     for(let j = 1; j < 5; j++){
-//         console.log(`Цикл 2 - ${j}`);//Этот внутренний цикл будет исполняться в n раз часе чем внешний цикл, потому что он  исполняется при каждой итерации внешнего цикла.
-//     }
-// }
-
-const tasks = [[1, 'Задача 1'], [2, 'Задача 2']]
-
-
-for(let i= 0; i < tasks.length; i++){
-    for(let j = 0; j < tasks[i].length; j++){
-        console.log(tasks[i][j]);
-    }
+//Цикл while
+for(let i = 1; i < 5; i++){
+    console.log(`Вывод - ${i}`);
 }
 
 
-
-//Это было бы как 
-// const a = tasks[i];
-// const b = a[j]
-
-//Тут  будет  
-// 1
-// app.js:14 Задача 1
-// app.js:14 2
-// app.js:14 Задача 2
+// let i = 1
+// while (i < 5) {
+//     console.log(`Вывод - ${i}`);
+//     i++;
+// }
 
 
+// Когда использовать цикл while или for   While: 
+const arr = [1, 4, 8, 7];
+
+for(let i = 0; i < arr.length; i++){
+    if(arr[i] > 5){
+        break
+    }
+console.log(arr[i]); //Выведет 1 и 4
+}
 
 
-// Цикл 1 - 1
-// app.js:5 Цикл 2 - 1
-// app.js:5 Цикл 2 - 2
-// app.js:5 Цикл 2 - 3
-// app.js:5 Цикл 2 - 4
-// app.js:3 Цикл 1 - 2
-// app.js:5 Цикл 2 - 1
-// app.js:5 Цикл 2 - 2
-// app.js:5 Цикл 2 - 3
-// app.js:5 Цикл 2 - 4
-// app.js:3 Цикл 1 - 3
-// app.js:5 Цикл 2 - 1
-// app.js:5 Цикл 2 - 2
-// app.js:5 Цикл 2 - 3
-// app.js:5 Цикл 2 - 4
-// app.js:3 Цикл 1 - 4
-// app.js:5 Цикл 2 - 1
-// app.js:5 Цикл 2 - 2
-// app.js:5 Цикл 2 - 3
-// app.js:5 Цикл 2 - 4
-// app.js:3 Цикл 1 - 5
-// app.js:5 Цикл 2 - 1
-// app.js:5 Цикл 2 - 2
-// app.js:5 Цикл 2 - 3
-// app.js:5 Цикл 2 - 4
-// app.js:3 Цикл 1 - 6
-// app.js:5 Цикл 2 - 1
-// app.js:5 Цикл 2 - 2
-// app.js:5 Цикл 2 - 3
-// app.js:5 Цикл 2 - 4
-// app.js:3 Цикл 1 - 7
-// app.js:5 Цикл 2 - 1
-// app.js:5 Цикл 2 - 2
-// app.js:5 Цикл 2 - 3
-// app.js:5 Цикл 2 - 4
-// app.js:3 Цикл 1 - 8
-// app.js:5 Цикл 2 - 1
-// app.js:5 Цикл 2 - 2
-// app.js:5 Цикл 2 - 3
-// app.js:5 Цикл 2 - 4
-// app.js:3 Цикл 1 - 9
-// app.js:5 Цикл 2 - 1
-// app.js:5 Цикл 2 - 2
-// app.js:5 Цикл 2 - 3
-// app.js:5 Цикл 2 - 4 
+let i = 0;
+while(arr[i] <= 5 &&  arr.length){
+console.log(arr[i]);
+i++
+}
+
+
+//Также есть другая контсрукция  do{}while
+let j = 0
+
+do{
+    console.log(j);
+    j++;
+}while(j < 0)
