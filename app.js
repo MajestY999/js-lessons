@@ -1,23 +1,53 @@
-// Упражнение - Расчет итогового баланса.
-/* 
-Расчёт итогового баланса
-Проверка наличия отрицательного баланса
-Расчёт среднего дохода и среднего расхода
-Данные:
-Operations: Массив чисел (каждое число = операция)
-Начальный баланс: 100 долларов
+//Упражнение 
 
-*/
+const operations = [1000, -700, 300, -500, 10000]
+const startingBalance = 100;
 
-const Operations = [100, 450, 500, 750, 800, -900, -200]
-const mainBalance = 300 //Наши  которые сейчас у нас на руках
-
-function getBalance(){
-    let balance = mainBalance //Тут обьявляем переменную чтобы в будущем сложить все деньги в месте и посмотреть итоговым баланс
-    for (const element of Operations) {
+function getBalance(arrayOfOperations, initailBalance){
+    let balance = initailBalance
+    for (const element of arrayOfOperations) {
         balance += element
     }
-    console.log(balance);//Тут выводим внутри функции итоговые деньги сколько мы получили с общей суми и сколько сняли
+    return balance;
 }
 
-getBalance() //Получаем 1800
+console.log(getBalance(operations, startingBalance));
+
+function checkOperations(arrayOfOperations, initailBalance){
+ let balance = initailBalance;
+ let  isOk = true;
+ for (const element of arrayOfOperations) {
+    balance += element
+    if(balance < 0 ){
+        isOk = false;
+        break;
+    }
+ }
+ return isOk
+}
+
+console.log(checkOperations(operations, startingBalance));//true
+
+//Средний расход и доход
+
+
+function avarageOperations(arrayOfOperations){
+   let positiveCount = 0;
+   let positiveSum = 0;
+   let negativeCount = 0;
+    let negativeSum = 0;
+    for (const element of arrayOfOperations) {  
+        if(element > 0){
+            positiveSum++;
+            positiveSum += element
+        }
+         if(element < 0){
+            negativeCount++;
+            negativeSum += element
+        }
+    }
+    return [positiveSum / positiveCount, negativeSum / negativeCount]
+}
+
+
+console.log(avarageOperations(operations));
