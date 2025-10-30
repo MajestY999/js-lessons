@@ -1,29 +1,28 @@
-//Функции высшего порядка
+// Callback функции
 
-
-//Функции первого класса это просто значения
-//Хранить в переменных 
-//Передавать в другие функции
-//Возвращать в функции
-//Пример
-
-const a = (b) => b++ //const a хранить в переменных
-
-function g(a){   //g(a <--(Передавать в другие функции)) 
-    return a //<----возвращать из функций
+function add(a, b){
+    return a+b;
 }
 
-
-
-//Функции высшего порядка это те функции которые принимают или/ и возвращают другие функции
-
-//Примеры 
-
-function c(a){  //<-- Принимает другие функции
-
+function subtract(a, b){
+    return a -b;
 }
 
-
-function f(){
-    return a; // <--- Возвращает другие функции.
+function power(a, b){
+    return a ** b
 }
+
+//Функция высшего порядка
+
+function calculate(a, b, fn){
+    console.log(fn.name);
+    const res = fn (a, b)
+    return res   
+}
+
+let res = calculate(3, 5, add)//8, add
+console.log(res);
+res = calculate(3, 5, subtract)//-2, substract
+console.log(res);
+res = calculate(3, 5, power)//243, power
+console.log(res);
