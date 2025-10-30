@@ -1,53 +1,29 @@
-//Упражнение 
-
-const operations = [1000, -700, 300, -500, 10000]
-const startingBalance = 100;
-
-function getBalance(arrayOfOperations, initailBalance){
-    let balance = initailBalance
-    for (const element of arrayOfOperations) {
-        balance += element
-    }
-    return balance;
-}
-
-console.log(getBalance(operations, startingBalance));
-
-function checkOperations(arrayOfOperations, initailBalance){
- let balance = initailBalance;
- let  isOk = true;
- for (const element of arrayOfOperations) {
-    balance += element
-    if(balance < 0 ){
-        isOk = false;
-        break;
-    }
- }
- return isOk
-}
-
-console.log(checkOperations(operations, startingBalance));//true
-
-//Средний расход и доход
+//Функции высшего порядка
 
 
-function avarageOperations(arrayOfOperations){
-   let positiveCount = 0;
-   let positiveSum = 0;
-   let negativeCount = 0;
-    let negativeSum = 0;
-    for (const element of arrayOfOperations) {  
-        if(element > 0){
-            positiveSum++;
-            positiveSum += element
-        }
-         if(element < 0){
-            negativeCount++;
-            negativeSum += element
-        }
-    }
-    return [positiveSum / positiveCount, negativeSum / negativeCount]
+//Функции первого класса это просто значения
+//Хранить в переменных 
+//Передавать в другие функции
+//Возвращать в функции
+//Пример
+
+const a = (b) => b++ //const a хранить в переменных
+
+function g(a){   //g(a <--(Передавать в другие функции)) 
+    return a //<----возвращать из функций
 }
 
 
-console.log(avarageOperations(operations));
+
+//Функции высшего порядка это те функции которые принимают или/ и возвращают другие функции
+
+//Примеры 
+
+function c(a){  //<-- Принимает другие функции
+
+}
+
+
+function f(){
+    return a; // <--- Возвращает другие функции.
+}
