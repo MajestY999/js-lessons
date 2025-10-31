@@ -1,46 +1,17 @@
-//Как записываются функции высшего порядка и работают
-
-function add(a, b){
-return a + b
+//Возврат функций(Возвращение одной функции из другой) 
+function power(pow){
+ return function(num){
+    return num **pow
+ }
 }
 
-function subtract(a, b){
-    return a - b 
-}
+const powerOfTwo = power(2)
 
-function power  (a,b) {
-    return a ** b
-}
+console.log(powerOfTwo(5));//25
+console.log(powerOfTwo(10));//100
 
-//Функция высшего порядка
-function calculate(a, b, fn){
-    console.log(fn.name);
-    const res = fn(a, b)
-    return res;
-}
-let res = calculate(3, 5, add)// 8
-console.log(res);
-res = calculate(3, 5, subtract) // -2 
-console.log(res);
+const powerOfThree = power(3)
+console.log(powerOfThree(5));
 
-res = calculate(3, 5, power)
-console.log(res); // 243
 
-function calc1(a, b, c, fn1){
-    console.log(fn1.name);
-    const  res1  = fn1(a, b, c)
-    return res1
-}
-
-function sent(a, b, c){
-
- return (a + b) **c
-}
-
-function newsum (a, b, c){
-return a + b + c
-}
-let res1 = calc1(4, 5, 3, sent) // 729
-console.log(res1);
-res1 = calc1(35, 24, 15, newsum)
-console.log(res1);
+console.log(power(5)(4));//Короче все просто тут  у нас будет так что у нас 4 это num, а вот 5 это pow  так как первое в функции power это pow то есть он будет степенью, а num числом, то есть тут м обьявляем что у нас степень будет треться то есть pow = 3 const powerOfThree = power(3), а тут будет число которое мы будет возводить в степень то ечть оно будет основным то есть 5 ** 3 = 125  console.log(powerOfThree(5));
