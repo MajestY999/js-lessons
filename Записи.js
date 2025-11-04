@@ -571,3 +571,12 @@ while (ji < fruits.length) { // Условие: цикл выполняется,
 // Яблоко
 // Банан
 // Апельсин
+
+
+
+
+const myarr = [15, 20, 55, 30,45]
+
+myarr.forEach((element, n) => {
+    console.log(`На вашем счете: ${element}`);
+})
