@@ -575,8 +575,47 @@ while (ji < fruits.length) { // Условие: цикл выполняется,
 
 
 
-const myarr = [15, 20, 55, 30,45]
+//Повторение методов forEach и  map
 
-myarr.forEach((element, n) => {
-    console.log(`На вашем счете: ${element}`);
-})
+const score  = [5, 10, 0, 15]
+
+for (const [i, element] of score.entries()) {
+    console.log(`Раунд${i + 1}:${element}`);
+}
+
+console.log('------------------------------');
+
+// score.forEach(function(element){
+//     console.log(`Раунд:${element}`)
+// })
+
+score.forEach((scoreEl, i) =>{ //Это второй вариант через стрелочную функцию, а также он более короткий
+    console.log(`Раунд${i + 1}:${scoreEl}`)//Всегда лучше называть не просто element  а например scoreEl чтобы е было повторов
+ })
+ //(5, 0) => {....}
+ //(10, 1) => {....}
+console.log('------------Метод Map-------------');
+
+
+const  transactionInUSD = [10, -7, 50, -10, 100]
+
+
+const transactionInRUB = []
+for (const transaction of transactionInUSD) {
+    transactionInRUB.push(transaction * 60)
+}
+
+console.log(transactionInUSD);
+console.log(transactionInRUB);
+
+
+// const transactionInRUB2 = transactionInUSD.map((transaction, i) => {
+//     return transaction * 6 
+// })
+
+const transactionInRUB2 = transactionInUSD
+.map((transaction, i) => {
+    console.log(i);// 0 1 2 3 4
+    return transaction * 60 }) //тоже точь в точь как выше в задокументированном варианте.
+
+console.log(transactionInRUB2);//Точь в точь как выше 
