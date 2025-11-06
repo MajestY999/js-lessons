@@ -1,26 +1,15 @@
-//Метод filter
+//Упражнение - вывод изменений цен
 
-const operations = [100, -20, 7, -20, 50]
-// const positiveOperations = [];
+const prices = [[100, 200], [120, 100], [200, 350]]
 
-// for (const operation of operations) {
-//     if(operation > 0){
-//         positiveOperations.push(operation)
-//     }
-// }
-// console.log(positiveOperations);// Отфильтровали все операции только на позитивные.
+//использовать map filter
+//Нужно преобразовать данные в массив, где будут отображены только положительные изменения цен: [100, 150] и [200, 350]
+// Но массив [120, 100] будет считать отрицательным так как цены упали вниз, а этого не должно произходить. 
 
 
-const positiveOperations = operations.filter(operation => {
-    return operation > 0;//Тут мы оставляем те элементы которые верны нашему условию. Тут у нас показывает что только положительные варианты будут отображаться.
-})
-console.log(positiveOperations);
-
-const positiveRUBOOperations = operations
-    .filter(operation => {
-    return operation > 0;//Тут мы оставляем те элементы которые верны нашему условию. Тут у нас показывает что только положительные варианты будут отображаться.
-    })
-    .map(operation => operation  *60) 
-    
-    
-console.log(positiveRUBOOperations);
+const result = prices
+.map(
+    product => product[1] - product[0]
+)
+.filter(price => price > 0)
+console.log(result);//100, 150
