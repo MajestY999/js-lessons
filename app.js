@@ -18,7 +18,7 @@ console.log(finalBalance); //107
 //0 - acc = 0, value = 100
 //1 - acc = 100, value = -20
 
-const minElement = operations.reduce((acc, operation, i) => {
+const minElement = operations.reduce((acc, operation) => {
     if(operation > acc){
         return acc
     }else {
@@ -27,3 +27,29 @@ const minElement = operations.reduce((acc, operation, i) => {
    
 }, 0);
 console.log(minElement);//-30, Тут происходит не аккомуляция а возвращение минимально элемента массива
+
+//Упражнение - среднее значение
+
+let arr = [1, 4, 4, 10] 
+const SumArr = arr.reduce( (acc,arrValue ) => 
+    { 
+        return acc += arrValue 
+    }, 
+    
+0); 
+
+const avgElement = SumArr / arr.length 
+console.log(avgElement);
+
+
+
+//пример преподавателя
+const avg = arr.reduce((acc, el, i) => {
+     if(i != arr.length - 1){
+        return acc + el;
+     } else{
+        return (acc + el) / arr.length
+     }
+}, 0)
+
+console.log(avg);
