@@ -6,10 +6,11 @@ const prices = [[100, 200], [120, 100], [200, 350]]
 //Нужно преобразовать данные в массив, где будут отображены только положительные изменения цен: [100, 150] и [200, 350]
 // Но массив [120, 100] будет считать отрицательным так как цены упали вниз, а этого не должно произходить. 
 
-
-const result = prices
-.map(
-    product => product[1] - product[0]
+const result = prices.map(
+    price => price[1] - price[0]
 )
-.filter(price => price > 0)
-console.log(result);//100, 150
+.filter(
+    price => price > 0
+)
+
+console.log(result);
