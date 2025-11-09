@@ -413,11 +413,11 @@ console.log(`${i}`);
 
 
 
-const arr = ['!', 'js', 'люблю', 'я']
+const arr8 = ['!', 'js', 'люблю', 'я']
 const newArr = []
 
-for(let i = arr.length -1; i >=0; i--){
-    newArr.push(arr[i])
+for(let i = arr8.length -1; i >=0; i--){
+    newArr.push(arr8[i])
 }
 
 console.log(newArr);
@@ -641,3 +641,14 @@ console.log(reslut);
 // 100 - 120 = -20
 
 // 350 - 200 = 150
+
+
+const arr = [1, 4, 4, 10];
+
+const sumArr = arr.reduce((acc, arrValue) => {
+    return acc += arrValue
+}, 0)
+
+const avgElement = sumArr / arr.length
+
+console.log(avgElement);
