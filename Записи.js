@@ -652,3 +652,32 @@ const sumArr = arr.reduce((acc, arrValue) => {
 const avgElement = sumArr / arr.length
 
 console.log(avgElement);
+
+
+//реализация some
+const arr5 = [2, 4, 4, 10, 20];
+
+
+
+function some(array, element){
+    const res  = array.find(el => el === element)
+    return res === undefined ? false : true
+
+}
+
+console.log(some(arr5, 2));//true    
+
+console.log(arr.some(el => el === 0)); //false
+
+
+
+const prices = [[100, 200], [120, 100], [200, 350]];
+
+const res10 = prices.map(
+    price => price[1] - price[0]
+)
+.filter(
+    price => price > 0
+)
+
+console.log(res10 );
