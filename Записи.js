@@ -660,7 +660,7 @@ const arr5 = [2, 4, 4, 10, 20];
 
 
 function some(array, element){
-    const res  = array.find(el => el === element)
+    const res  = arra  y.find(el => el === element)
     return res === undefined ? false : true
 
 }
