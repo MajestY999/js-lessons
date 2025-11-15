@@ -1,20 +1,11 @@
-//Базовые методы(строки и работа с ними)
-const userName = 'Вася Пупкина'
+const fullUserName = 'Вася aka Terminator Пупкин';//В0а1с2я3 4 a5k6a7 8 T9e0r1m2i3n4a5t6o7r8 9 П0у1п2к3и4н5
 
-console.log(userName);//Если у нас эмодзи то у нас первые два элемента будут отображаться  как:� и только со второго индекса массива будет буква в(короче эмодзи занимает 2 места  или две буквы в массиве и нужно использовать + для того чтобы эмози началось с нулевого индекса и только буква будет на первом индексе.)
-//хотим получить первую букву имени человека
-console.log(userName[0]);//В
-console.log(userName[0] + userName[1]);//Ва
-console.log(userName.charAt(2));//точно такая же запись только используя метод(функцию charAt) тут будет только буква с
 
-console.log(userName.length);//размер строчного массива в нашем случае будет 11, а если используем  еще эмодзи то 13.
+const userName = fullUserName.slice(0, fullUserName.indexOf(' '))
+console.log(userName);
+const userSurname = fullUserName.slice(
+    fullUserName.lastIndexOf(' ') + 1,
+    fullUserName.length
+)
+console.log(userSurname);
 
-console.log(userName.indexOf('П'));//5
-console.log(userName.indexOf('а'));//1 получим только первый индекс  в виде 1 и тогда нам нужен lastIndexOf чтобы найти еще один или последний элемент.
-console.log(userName.lastIndexOf('а'));//11
-console.log(userName.indexOf("уп"));//6 потому что последний элемент это буквва п и она у нас с индексом 6. но если мы напишем тот элемент или букву которой нет или нету. То тогда -1 так как это не правда.
-console.log(userName.includes('уп'));
-console.log(userName.includes('упв')); //точно также работает как я написал, что если нет элемента то тогда false.
-
-console.log(userName.slice(4));//Пупкина
-console.log(userName.slice(5, 8));//Тут работает так что отрезаем от 5 индекса включительно по 8  то есть будет Пуп  
