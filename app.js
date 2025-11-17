@@ -1,11 +1,12 @@
-const fullUserName = 'Вася aka Terminator Пупкин';//В0а1с2я3 4 a5k6a7 8 T9e0r1m2i3n4a5t6o7r8 9 П0у1п2к3и4н5
-
-
-const userName = fullUserName.slice(0, fullUserName.indexOf(' '))
-console.log(userName);
-const userSurname = fullUserName.slice(
-    fullUserName.lastIndexOf(' ') + 1,
-    fullUserName.length
-)
-console.log(userSurname);
-
+//Повторение с начала темы: Работа со  строками.
+const userName  ='Вася Пупкин'
+console.log(userName[0]);//В
+console.log(userName[1]);//а
+console.log(userName.charAt(2));//с
+//Но эмодзи тратят 2 места в массиве и будет появлятся знак с вопросом так как он не может отображаться в консоле.
+console.log(userName.length);//11
+console.log(userName.indexOf('П'));//5
+console.log(userName.lastIndexOf('а'));
+console.log(userName.includes('Вася'));
+console.log(userName.slice(4));//Остался пробел и фамилия.
+console.log(userName.slice(5, 8));
