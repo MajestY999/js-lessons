@@ -1,9 +1,5 @@
-//Строки и массивы
-const userFullName = 'Вася Пупкин Васильевич'
-console.log(userFullName.split(' '));
-const [firstName, familyName, lastName] = userFullName.split(' ')
-console.log(firstName);
-console.log(familyName);
-console.log(lastName);
-const arr = ['Ты', 'знаешь', 'JS']
-console.log(arr.join(' '));
+//Дополнение строк
+const film = 'Звездные Воины'
+console.log(film.padStart(50, '*'));//Наша строка находиться в 50 строках
+console.log(film.padEnd(50, '*'));
+console.log(film.repeat(10, ''));
