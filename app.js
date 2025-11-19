@@ -1,11 +1,22 @@
-//Острортировать пользователей по возрасту
-
 const users = [
-    {name: 'Вася', age: 30},
-    {name: 'Катя', age: 18},
-    {name: 'Аня', age: 40},
-    {name: 'Петя', age: 25},
-]
+    { 
+        name: 'Вася',
+         surname: 'Пупкин',
+          age: 30,
+           skills: ['Разработка', 'DevOps'] 
+        },
+    { name: 'Катя', 
+        age: 18, 
+        surname: 'Белова',
+         skills: ['Дизайн'] 
+        },
+];
 
-users.sort((a, b) => a.age - b.age)
-console.log(users);
+const userData = users.map(user => {
+    return {
+        fullName: `${user.name} ${user.surname}`,
+        skillsNum: user.skills.length  
+    }
+})
+console.log(userData);
+
