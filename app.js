@@ -1,28 +1,11 @@
-//Обращение к элементам.
-const user ={
-        name: 'Вася',
-        surname: 'Пупкин',
-        age: 24,
-        skills: [
-            'Программирование',
-            'Готовка'
-        ],
-        uduBasic: 'Школа 10',
-        eduPro: 'МФТИ'
-};
+//Острортировать пользователей по возрасту
 
-console.log(user);
-console.log(user.skills[0]);//Можно использовать порядок операторов.
-console.log(user['skills']); //(2) ['Программирование', 'Готовка']
-const level = 'Pro'
-console.log(user['edu' + level]); //МФТИ
+const users = [
+    {name: 'Вася', age: 30},
+    {name: 'Катя', age: 18},
+    {name: 'Аня', age: 40},
+    {name: 'Петя', age: 25},
+]
 
-// const res = prompt('Введите свойство');
-// console.log(user[res]);
-user.cuty = 'Москва'
-user['city'] = 'Москва'
-console.log(user);
-
-user.age = 30
-user['age'] = 30
-console.log(user);
+users.sort((a, b) => a.age - b.age)
+console.log(users);
