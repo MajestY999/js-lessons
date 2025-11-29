@@ -157,3 +157,4 @@ const newarray = [15, 20, 55, 30,45]
 newarray.forEach((element, n) => {
     console.log(`На вашем счете: ${element}`);
 })
+
