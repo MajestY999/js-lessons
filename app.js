@@ -1,36 +1,63 @@
-//Enhance object literals
-//Упражнение кошелек
-const wallet = {
-  balance: 0,
-  operations: [],
-  increase: function(sum, reason){
-    this.balance += sum
-    this.operations.push(`${reason}: true`)
-    return `Пополнение на ${sum} 
-    По причине:${reason} `
-  },
-  decrease: function(sum, reason){
-    if(this.balance < 0){
-        return false
-    }
-    this.balance -= sum
-    this.operations.push(`${reason}: true`)
-    return `Снятие на ${sum}
-    По причине:${reason}`
-  },
-  getOperationsLength: function(){
-    return wallet.operations.length
+// Повторение циклов for; forof; forin; while; do while
+ 
+// Цикл for
+for (let i = 0; i< 11; i++){// первая часть обьявление переменной в нашем цикле, вторая часть условие, третья часть шаг
+  console.log(`Наш баланс ${i}$`);// выводим в консоль значение переменной i
+};
+
+console.log('Break и continue в циклах');
+
+
+//Break и continue в циклах
+const tasks = ['Задача 1', 'Задача 2', 'Задача 3']
+for(let i = 0; i < tasks.length; i++){
+  if(tasks[i] === 'Задача 2'){// если значение массива tasks с индексом i равно 'Задача 2'
+    continue;// пропускаем эту итерацию цикла
   }
+  console.log(tasks[i]);// выводим в консоль значение массива tasks
 }
-console.log(wallet.increase(1000, ' Перевод'));
- console.log(wallet.decrease(1000, 'Налоги'));
- console.log(wallet.getOperationsLength());// 2
-// console.log(wallet);
 
-const Initialbalance = 7
+console.log('----------------------------------------------');
 
-const wallet2 ={
-    balance: Initialbalance,
-    operations: [],
+
+for(let i = 0; i < tasks.length; i++){
+  if(tasks[i] === 'Задача 2'){// если значение массива tasks с индексом i равно 'Задача 2'
+    break;// прерываем цикл
+  }
+  console.log(tasks[i]);// выводим в консоль значение массива tasks
 }
-console.log(wallet2);
+//Выведется 'Задача 1' и цикл прервется на 'Задача 2', но вторая задача не выведется
+
+
+console.log('Упражнение- Цикл в обратном порядке');
+
+
+const arr =  ['!', 'js', 'люблю', 'Я']
+const newArr = [];//создаем пустой массив
+
+for(let i = arr.length - 1; i >= 0; i--){//цикл начинается с последнего элемента массива arr и идет до первого элемента
+  newArr.push(arr[i])//добавляем в новый массив элементы из старого массива в обратном порядке
+}
+  console.log(newArr);//Выведется ['!', 'js', 'люблю', 'Я']
+
+  //Цикл в цикле
+  console.log('-----------------------Цикл в цикле------------------------------');
+
+  // for(let i = 1; i< 5; i++){
+  //   console.log(`Цикл 1 - ${i}`);//Цикл 1 - с значением i от 0 до 4
+  //   for(let j = 1; j < 5; j++){
+  //     console.log(`Цикл 2 - ${j}`);//Цикл 2 - с значением j от 0 до 4
+  //   }
+  // }
+// Внутренний цикл будет работать чаще, чем внешний цикл, а также он будет повторяться каждый раз, когда внешний цикл выполняется один раз.
+const tasks2 = [[1, 'Задача 1'], [2, 'Задача 2']];//Массив массивов
+
+for(let i = 0; i< tasks2.length; i++){
+    for(let j = 0; j < tasks2[i].length; j++){
+      console.log(tasks2[i][j]);
+    }
+  }
+
+
+console.log('------------------------');
+
