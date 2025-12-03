@@ -1,17 +1,22 @@
-//Итерации в массивах
+// //Метод map
+// const score = [5, 10, 0, 15];
+// console.log('цикл forEach');
+// score.forEach((scoreEl, i)=>{
+//  console.log(`Раунд$: ${scoreEl}`);
+// })
 
-//Цикл forEach
-console.log('Цикл forEach:');
-const score = [5, 10, 0, 15];
-
-for(const [i, el] of score.entries()){
- console.log(`Раунд${i}: ${el}`);
+const transactionInUSD = [10, -7, 50, -10, 100];
+const transactionInRUB =[];
+for(const transaction of transactionInUSD){
+    transactionInRUB.push(transaction * 60)
 }
 
-console.log('цикл forEach');
-score.forEach((el)=>{
- console.log(`Раунд$: ${el}`);
-})//Цикл forEach работает с массивами то есть есть массив счетав котором числа  и мы их используем для так сказать использования сколько забили баскетбольных мечей(в очках первый мяч 5 баллов и дальше + 5)
-// (5, 0)=> {....}
-//{10, 1}=> {....}
-//Также в цикле forEach использовать остановку цикла (breack)
+console.log(transactionInUSD);
+console.log(transactionInRUB);
+
+const transactionInRUB2 =  transactionInUSD
+.map((transaction)=>{//метод map создает новый массив в transactioninRUB2 и там происходят переводы
+        return  transaction * 60
+    });
+console.log(transactionInRUB2);
+console.log(transactionInUSD);
