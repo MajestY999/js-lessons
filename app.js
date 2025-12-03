@@ -1,54 +1,17 @@
-// Повторение цикла while
+//Итерации в массивах
 
-for(let i = 1; i < 5; i++){
-  console.log(`Вывод - ${i}`);
+//Цикл forEach
+console.log('Цикл forEach:');
+const score = [5, 10, 0, 15];
+
+for(const [i, el] of score.entries()){
+ console.log(`Раунд${i}: ${el}`);
 }
 
-console.log('-------------------------');
-// //let i = 1//обьявляем переменную снаружи
-// while(i < 5){
-//   console.log(`Вывод - ${i}`);
-//   i++;
-// }
-
-const arr = [1, 4, 8, 7];
-
-for(let i = 0; i < arr.length; i++){
-  if(arr[i]> 5){
-    break;
-  }
-  console.log(arr[i]);
-}
-
-//Выведется 1 4
-
-let i = 0
-while(arr[i] <= 5 && arr.length){
- console.log(arr[i]);
- i++;
-}
-
-console.log('-------------------------do while--------------------------');
-
-let j = 0;
-do{
-  console.log(j);
-}
-while(j < 0)//Выводиться будет 0 так как тело выполнится 1 раз, а потом проверится условие и окажется ложным
-
-//Цикл for of и fot in
-
-// const arr = [1, 4, 8, 7];
-// for(let i = 0; i < arr.length; i++){
-//   if(arr[i]> 5){
-//     break;
-//   }
-//   console.log(arr[i]);
-// }
-//Берем те же данные и перебираем их через for of
-for(let element of arr){
-  console.log(element);//Выведет все элементы массива 0 1 4 8 7
-}
-for(let index in arr){
-  console.log(index);//Выведет индексы массива 0 1 2 3
-}
+console.log('цикл forEach');
+score.forEach((el)=>{
+ console.log(`Раунд$: ${el}`);
+})//Цикл forEach работает с массивами то есть есть массив счетав котором числа  и мы их используем для так сказать использования сколько забили баскетбольных мечей(в очках первый мяч 5 баллов и дальше + 5)
+// (5, 0)=> {....}
+//{10, 1}=> {....}
+//Также в цикле forEach использовать остановку цикла (breack)
