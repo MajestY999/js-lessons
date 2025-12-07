@@ -1,22 +1,26 @@
-// //Метод map
-// const score = [5, 10, 0, 15];
-// console.log('цикл forEach');
-// score.forEach((scoreEl, i)=>{
-//  console.log(`Раунд$: ${scoreEl}`);
-// })
+//Итерирование по обьекту
 
-const transactionInUSD = [10, -7, 50, -10, 100];
-const transactionInRUB =[];
-for(const transaction of transactionInUSD){
-    transactionInRUB.push(transaction * 60)
+const cities = {
+    msk:  {
+        let: 200,
+        temp: 25
+    },
+    spb:{
+        lt: 100,
+        temp: 20
+    }
 }
 
-console.log(transactionInUSD);
-console.log(transactionInRUB);
+let sumTemp = 0;
+console.log(Object.keys(cities));
+let citiesCount = Object.keys(cities).length
+// for(const key in cities){//если изменить с of на in мы увидим ключи нашего обьекта
+//     sumTemp += cities[key].temp;
+// }
+// console.log(sumTemp / citiesCount); //Получим 22.5
 
-const transactionInRUB2 =  transactionInUSD
-.map((transaction)=>{//метод map создает новый массив в transactioninRUB2 и там происходят переводы
-        return  transaction * 60
-    });
-console.log(transactionInRUB2);
-console.log(transactionInUSD);
+
+for(const key of Object.keys(cities)){//если хотим итерироваться по ключам 
+   sumTemp += cities[key].temp;
+}
+console.log(sumTemp / citiesCount); //Получим те же  22.5
