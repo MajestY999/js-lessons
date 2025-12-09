@@ -1,54 +1,57 @@
-//Optional chaining
-const cities =  {
-  msk: {
-    temp: {
-      celcius: 25
-    }
+
+const warehouse = {
+  goods: [],
+  findGoodById: function (id) {//Поиск по id
+    return this.goods.find(g => g.id == id)
   },
-  spb: {
+  addGood: function (good) { //добавление 
+    const existedGood = this.findGoodById(good.id)
+    if(existedGood){
+      console.log('Этот товар уже есть на складе');
+      return
+    }
+    this.goods.push(good)
+  },
+  getWeightKg: function () {//измерение по весу
+    return this.goods.reduce(
+      (acc, el)=> 
+        acc += el.weight?.kg ?  el.weight.kg : 0,
+       0
+    )
+  },
+};
 
+/* Товары */
+const car = {
+  id: 1,
+  weight: {
+  kg: 1000
+  },
+  brand: 'Ford'
+}
+
+const chair = {
+  id: 2,
+  weight: {
+  kg: 2
   }
 }
 
-const city = 'krd'
-
-if(cities[city] != undefined && cities[city].temp != undefined){
-console.log(cities.spb.temp.celcius);
-}
-  else{
-  console.log('Данные отстутствуют');
- }
-
-
- //optional chaining опциональные цепи
- 
- console.log(cities[cities]?.temp?.celcius);//undefined
-
-
-
- const user = {
-  name: 'Alex',
-  address: { //вложенный обьект 
-    city: 'Moscow',
-  }
+const paper = {
+  id: 3,
+  color: 'red'
 }
 
-console.log(user.address.city); // 'Moscow'
-//console.log(user.profile.city); // ❌ Ошибка! Нельзя обратиться к свойству city у undefined
 
-//С Optional chaining: 
-console.log(user.address?.city);  // 'Moscow'
-console.log(user.profile?.city);  // undefined, но ошибки нет!
+warehouse.addGood(car)
+console.log(warehouse.goods);
+warehouse.addGood(chair);
+warehouse.addGood(paper);
+console.log(warehouse.goods);
+let findedItem = warehouse.findGoodById(6)
+console.log(findedItem);
+findedItem = warehouse.findGoodById(1)
+console.log(findedItem);
 
-
-
-//Глубокая вложенность, но без optional chaining
-if (cities.spb && cities.spb.temp && cities.spb.temp.celsius) {
-  console.log(cities.spb.temp.celsius);
-} else {
-  console.log('сервер не вернул температуру');
-}
-
-//С optional chaining
-console.log(cities.spb?.temp?.celsius); // undefined, если спб или temp не определены
-
+const w = warehouse.getWeightKg();
+console.log(w);
