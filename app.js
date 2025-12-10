@@ -1,57 +1,31 @@
+//повторение метода reduce
 
-const warehouse = {
-  goods: [],
-  findGoodById: function (id) {//Поиск по id
-    return this.goods.find(g => g.id == id)
-  },
-  addGood: function (good) { //добавление 
-    const existedGood = this.findGoodById(good.id)
-    if(existedGood){
-      console.log('Этот товар уже есть на складе');
-      return
-    }
-    this.goods.push(good)
-  },
-  getWeightKg: function () {//измерение по весу
-    return this.goods.reduce(
-      (acc, el)=> 
-        acc += el.weight?.kg ?  el.weight.kg : 0,
-       0
-    )
-  },
-};
+const operations = [100, -20, 7, -30, 50];
 
-/* Товары */
-const car = {
-  id: 1,
-  weight: {
-  kg: 1000
-  },
-  brand: 'Ford'
+let balance = 0;
+for (const element of operations) {
+    balance += element
 }
-
-const chair = {
-  id: 2,
-  weight: {
-  kg: 2
-  }
-}
-
-const paper = {
-  id: 3,
-  color: 'red'
-}
+console.log(balance);//107  
 
 
-warehouse.addGood(car)
-console.log(warehouse.goods);
-warehouse.addGood(chair);
-warehouse.addGood(paper);
-console.log(warehouse.goods);
-let findedItem = warehouse.findGoodById(6)
-console.log(findedItem);
-findedItem = warehouse.findGoodById(1)
-console.log(findedItem);
+const finalBalance  = operations.reduce(
+    (acc, operation, i)=> {
+        console.log(`Интерация ${i}, acc: ${acc}, operation ${operation}`);  
+        return acc += operation
+    }, 0)//исходное значение
+//0 - acc =  0, value  = 100
+//1 - acc = 100, value = -20
+console.log(finalBalance);//107
 
-const w = warehouse.getWeightKg();
-console.log(w);
+const minElement  = operations.reduce(
+(acc, operation, i)=> {
+ if(operation > acc){
+    return acc
+ } else{
+    return operation
+ }
+})
+
+console.log(minElement);//-30
+
