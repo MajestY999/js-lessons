@@ -1,33 +1,19 @@
-//Примитивы и обьекты
+//Пример примитивов и обьектов
 'use strict'
-
-
-let firstName = 'Anton'
-let firstName2  = firstName
-firstName  = 'New'
-console.log(firstName);
-console.log(firstName2);
-
-const user1= {//object literals
-    name: 'Anton'
+let user = {
+    name: 'Anton',
+    id: 1,
+    roles: ['admin']
 }
-const user2 = user1
-user2.name = 'New'
+// user.name = 'NewUser'
 
-console.log(user1);
-console.log(user2);
-//Одинаковые названия в виде new потому что это объекты а выше это примитивы
+const newUser  = Object.assign({}, user);//Делает присвое не ссылки обькт в пользователя а создает новый обьект.
+// console.log(newUser);
+const newUser2 = {
+  ...user
+}
+newUser2.name = 'NewUser';
+newUser2.roles.push('User')
+console.log(user);
+console.log(newUser2);
 
-
-//Примитивы
-//Number, String, Boolean, Undefined, Null, Symbol, BugInt
-
-//Объекты
-//Object Literals, Arrays, Functions ...
-
-
-//Разница в том как они хранятся
-
-//Call stack -- это Primitive type
-
-//Heap -- Reference type(объекты и т.д) или просто ссылочные питы. 
