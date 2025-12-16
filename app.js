@@ -1,16 +1,33 @@
-//Пример работы call stack
-const sum = 1;
-console.log('start');
-console.log(sum);
+//Примитивы и обьекты
+'use strict'
 
-function add5(n){
-  n = n + 5; 
-  if(n > 100){
-    return n ;
-  }
-  console.log(n);
-  return add5(n)
+
+let firstName = 'Anton'
+let firstName2  = firstName
+firstName  = 'New'
+console.log(firstName);
+console.log(firstName2);
+
+const user1= {//object literals
+    name: 'Anton'
 }
+const user2 = user1
+user2.name = 'New'
 
-add5(sum)
-console.log('ended');
+console.log(user1);
+console.log(user2);
+//Одинаковые названия в виде new потому что это объекты а выше это примитивы
+
+
+//Примитивы
+//Number, String, Boolean, Undefined, Null, Symbol, BugInt
+
+//Объекты
+//Object Literals, Arrays, Functions ...
+
+
+//Разница в том как они хранятся
+
+//Call stack -- это Primitive type
+
+//Heap -- Reference type(объекты и т.д) или просто ссылочные питы. 
