@@ -1,19 +1,13 @@
-//Пример примитивов и обьектов
-'use strict'
-let user = {
-    name: 'Anton',
-    id: 1,
-    roles: ['admin']
+//'use strict'; scope chain
+// или окружение обьектов
+//БЫвает 3 вида scope 
+//Глобальный: Вне любых  функций или блоков. Переменные дуступны везде. const b = 10
+//scope функции:  Переменные дотсупны только внутри функции. 
+function a(){
+  const c =5; 
 }
-// user.name = 'NewUser'
-
-const newUser  = Object.assign({}, user);//Делает присвое не ссылки обькт в пользователя а создает новый обьект.
-// console.log(newUser);
-const newUser2 = {
-  ...user
-}
-newUser2.name = 'NewUser';
-newUser2.roles.push('User')
-console.log(user);
-console.log(newUser2);
+//блочный scope: переменные доступны только внутри блока.
+// if(b > 10){
+//   const d = 'Да';
+// }
 
