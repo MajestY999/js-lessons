@@ -1,13 +1,14 @@
-//'use strict'; scope chain
-// или окружение обьектов
-//БЫвает 3 вида scope 
-//Глобальный: Вне любых  функций или блоков. Переменные дуступны везде. const b = 10
-//scope функции:  Переменные дотсупны только внутри функции. 
-function a(){
-  const c =5; 
-}
-//блочный scope: переменные доступны только внутри блока.
-// if(b > 10){
-//   const d = 'Да';
-// }
+'use strict'
 
+let myCoolVarible = 1;
+
+
+if(true){
+myCoolVarible = 3
+} 
+console.log(myCoolVarible);
+
+function a(b, b){//должны быть разные переменные 
+console.log(b);
+}
+a(1, 1)
