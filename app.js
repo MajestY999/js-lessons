@@ -1,35 +1,37 @@
-//Поднятие 
-//Это возможность использовать определенные типы переменных до того, как они были обьявлены.
+// Scope — область, где можно "видеть" и использовать переменные/функции.
+// Scope бывает: глобальным, функциональным (локальным), блочным.
+// Scope не связан ни с массивами, ни с объектами напрямую.
 
-//Цикл переменных
-//обьявление: это var a(поднятие)
-//присвоение: a = 5
-//использование: a + 10
+//Пример использования this 
+'use strict'
+function addNum(num1, num2){
+  console.log(this);
+}
+addNum(); //из за strict режима он пуст. но без него появиться окно window
 
-//Что такое TDZ
-// function addRole(){
-//   user.roles.push(role); //это tdz то етсь где наша role не доступна Temporal Dead Zone
-//   let successMessage = 'Ура' // это тоже tdz Temporal Dead Zone
-//   const role = 'test'
-// }
-
-//Пример поднятия
-// console.log(a);ошибка и также будет с изменяемой переменой let 
-// console.log(b ); ошибка точнее будет undefined
-const  a = 3;
-var b = 2;
-console.log(b);//но тут все в порядке
-
-function addUser(){
-  //console.log('user added');
-
-
+const  addNum2 = (num1, num2) => {
+  console.log(this);
+  return num1 = num2
 }
 
-addUser()
-
-const arr1 = ()=> {
-  console.log('arr1');
+const user ={ 
+  name: 'Вася',
+  surname: 'Пупкин',
+  getFullName: function(){
+    console.log(this);
+    return this.name + ' ' + this.surname;
+  }
 }
-arr1()
 
+user.getFullName()
+
+const user2 = {
+  name: 'Марина',
+  surname: 'Катц',
+}
+
+user2.getFullName = user.getFullName
+user2.getFullName()
+
+const getFullName = user2.getFullName()
+getFullName()//будет ошибка
