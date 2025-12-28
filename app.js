@@ -1,18 +1,33 @@
-'user strict'
-//let, var, const, function, arguments
-//scope chain
-//this
-function sumNum(num1, num2){
-  console.log(this);//
-  console.log(arguments[0]);//то есть мы выведем чему равно значение первого элемента то есть у нас Num1 = 1, так как у нас снизу прописаны аргументы: console.log(sumNum(1, 4, 3, 7))
-return num1 + num2;
-}
-console.log(sumNum(1, 4, 3, 7));//если вызовем еще аргументы вызовем они нен выведутся так как по условию у нас всего 2 аргумента.
+//упражнение обьект в обьекте. 
+const company = {
+  name: 'ООО Агро',
+  getName(){
+    return this.name
+  },
+  employees: [
+    {
+      name: 'Света',
+      getName(){
+        return this.name
+      }
+    },
 
-const sumNumArr = (num1, num2)=> {
-  console.log(this);
-  console.log(arguments);
-  return num1  + num2
-}
-console.log(sumNumArr(1,4,3,7));//у нас будет ошибка потому что у нас стрелочная функция и аргументов нет в стрелочной функции.
+  ], 
+  ceo:{
+    name: 'Вася',
+    getnameCeo(){
+      return this.name
+    }
 
+  },
+  // getNameEmpl(){
+  //      console.log(this.employees.map(emp => emp.name) )
+     
+  //   }
+  
+}
+console.log(company.employees.map(employee => employee.getName()));//тут тоже вызываем массив с нашим работником
+console.log(`Компания: ${company.getName()}`);
+// console.log(company.getNameEmpl());
+console.log(` Основатель: ${company.ceo.getnameCeo()}`);//вызываемм ы с помощью контекста ceo так как данные находятся в нем а если его не вызвать то будет просто ошибка  
+console.log(company.employees.map(employee => employee.getName()));//это удобнее но для этого перед этим нужно сначала внутри обьекта прописать функцию с вызвом имени а потом пишем метод map в консоль в котором мы создадим массив с именем нашего работника.
