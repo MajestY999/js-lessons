@@ -1,37 +1,28 @@
-// Scope — область, где можно "видеть" и использовать переменные/функции.
-// Scope бывает: глобальным, функциональным (локальным), блочным.
-// Scope не связан ни с массивами, ни с объектами напрямую.
+'use strict';
+console.log(name);//пустое значение 
 
-//Пример использования this 
-'use strict'
-function addNum(num1, num2){
-  console.log(this);
-}
-addNum(); //из за strict режима он пуст. но без него появиться окно window
+const user = {
+  firstName:  'Вася',
+  lastName: 'Пупкин',
+  age: 20,
+  getUserInfo: function(){
+    console.log(`${this.firstName}  ${this.lastName}`);
 
-const  addNum2 = (num1, num2) => {
-  console.log(this);
-  return num1 = num2
-}
-
-const user ={ 
-  name: 'Вася',
-  surname: 'Пупкин',
-  getFullName: function(){
-    console.log(this);
-    return this.name + ' ' + this.surname;
+   const  canDrink = () =>{
+      if  (this.age >= 18){
+        console.log('может пить');
+      }
+      else{
+        console.log('не может пить');
+      }
+      
+    }
+    canDrink()//ошибка, потому что она не относится к никакому параметру обьекта, но можем использовать  стрелочную функцию. Но стрелочную функцию нужно использовать только когда у нас есть какой либо метод, то есмть например проверка возраста. НО this не будет работать с обысной функцией если у нас в ней есть метод. 
+  },
+  getUserInfoArrow: () => {
+    console.log(`${this.firstName}  ${this.lastName}`);//тут выведется 2  undefined, из за того что поведения контекста, потому что у него нет this во внешнем окружении а наши записи находятся во внутренним окрушении
   }
 }
 
-user.getFullName()
-
-const user2 = {
-  name: 'Марина',
-  surname: 'Катц',
-}
-
-user2.getFullName = user.getFullName
-user2.getFullName()
-
-const getFullName = user2.getFullName()
-getFullName()//будет ошибка
+user.getUserInfo()//Выводит имя  фамилия
+user.getUserInfoArrow() // undefined потому что this не работает с стрелочными функциями.
