@@ -1,28 +1,18 @@
-'use strict';
-console.log(name);//пустое значение 
-
-const user = {
-  firstName:  'Вася',
-  lastName: 'Пупкин',
-  age: 20,
-  getUserInfo: function(){
-    console.log(`${this.firstName}  ${this.lastName}`);
-
-   const  canDrink = () =>{
-      if  (this.age >= 18){
-        console.log('может пить');
-      }
-      else{
-        console.log('не может пить');
-      }
-      
-    }
-    canDrink()//ошибка, потому что она не относится к никакому параметру обьекта, но можем использовать  стрелочную функцию. Но стрелочную функцию нужно использовать только когда у нас есть какой либо метод, то есмть например проверка возраста. НО this не будет работать с обысной функцией если у нас в ней есть метод. 
-  },
-  getUserInfoArrow: () => {
-    console.log(`${this.firstName}  ${this.lastName}`);//тут выведется 2  undefined, из за того что поведения контекста, потому что у него нет this во внешнем окружении а наши записи находятся во внутренним окрушении
-  }
+'user strict'
+//let, var, const, function, arguments
+//scope chain
+//this
+function sumNum(num1, num2){
+  console.log(this);//
+  console.log(arguments[0]);//то есть мы выведем чему равно значение первого элемента то есть у нас Num1 = 1, так как у нас снизу прописаны аргументы: console.log(sumNum(1, 4, 3, 7))
+return num1 + num2;
 }
+console.log(sumNum(1, 4, 3, 7));//если вызовем еще аргументы вызовем они нен выведутся так как по условию у нас всего 2 аргумента.
 
-user.getUserInfo()//Выводит имя  фамилия
-user.getUserInfoArrow() // undefined потому что this не работает с стрелочными функциями.
+const sumNumArr = (num1, num2)=> {
+  console.log(this);
+  console.log(arguments);
+  return num1  + num2
+}
+console.log(sumNumArr(1,4,3,7));//у нас будет ошибка потому что у нас стрелочная функция и аргументов нет в стрелочной функции.
+
