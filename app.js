@@ -1,8 +1,28 @@
-//Из строки в массив и обратно
-const roles = ['user', 'admin', 'manager', 'superuser'];
+const tasks = ["Погулять", "Сделать домашку", "Купить хлеб"];
+function processTask(task){
+    tasks.push(task)
+}
+processTask('Пойти на учебу')
 
-const url = 'aunt/user/login';
-const res = url.split('/')//split в переводе означает разбить то есть мы будем делить данные на что то, в нашем случае мы делим наш url на массив из трех элементов
-console.log(res);
 
-console.log(roles.join('-'));
+processTask('Пойти работать за партия!')
+console.log(tasks);
+function deleteTask(task){
+    const index = tasks.indexOf(task)
+    if(index !== '-1')
+    {
+        tasks.splice(index, 1)
+    }
+}
+deleteTask('Погулять')
+console.log(tasks);
+function prioritize (task){
+const index = tasks.indexOf(task);
+if(index !== -1){
+    const item = tasks.splice(index, 1)[0];
+    tasks.unshift(item);
+}
+}
+
+prioritize('Купить хлеб')
+console.log(tasks);
