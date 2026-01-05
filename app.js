@@ -1,86 +1,59 @@
-//Повторение пройденного для более плотного обучения и стать лучше 
+//Повторение массивов
+const role1 = 'admin'
+const role2 = 'user'
+const role3 = 'superuser'
 
-//map 
+const roles = ['admin', 'user', 'superuser'];
+const userInfo = ['Аня', 25]
+console.log(roles);
+console.log(roles[0]);
+console.log(roles.length);
+//Что бы получить последний элемент массива: 
+console.log(roles[roles.length - 1]);
 
-// const operations = [100, -50, 20, -25, 250]
+console.log(roles.at(0));//Получим admin
+//Также мы можем также просто найти последний элемент массива
+console.log(roles.at(-1));
 
-// const result = operations.map((transaction)=> {
-//    return  transaction * 60
-// })
+const usersAge = [2040 - 2022, 10 > 0 ? 5 : 0 ] 
+console.log(usersAge);
 
-// console.log(result);
 
-//Повторение reduce 
-const operations = [100, -20, 7, -30, 50]
+const userNames = new Array('Вася', "Петя", "Катя")
+console.log(userNames);
 
-let balance = 0;
-for(const operation of   operations){
-    balance += operation;
+function square(el){
+    return el * el
 }
 
-console.log(balance);//107
+console.log(square(6));
 
-const finalBalance = operations.reduce((acc, value, i)=> {
-    console.log(`Итерация${i}, acc:${acc}, operations:${value}`);
-return acc += value
+const arr = [2, 4, 8, 16]
 
-
-}, 0)
-
-console.log(finalBalance);
-
-
-
-const minElement = operations.reduce((acc, operation, i)=> {//поиск минимального элемента
-   if(operation > acc){
-    return acc
-   } else{
-    return operation
-   }
-
-
-}, 0)
-
-console.log(minElement);//-30 минимальный элемент.
-
-//Упражнение к reduce
-
-//есть массив чисел 
-const arr = [1, 4, 4, 10]
-const SumEl  = arr.reduce((acc, valueArr)=> {
-return acc += valueArr
+const squareNums =  arr
+.map((nums)=>{
+return nums * 2
 })
 
-const avg = SumEl/ arr.length
+console.log(squareNums);
 
-console.log(avg);//результат верный, но тут результат суммы выведен из reduce так как по заданию должен быть внутри reduce 
+const users = ['Аня', 'Вика', 'Катя'];
+console.log(users);
+users[2] = 'Кристина'
+console.log(users);
+console.log(users.length);
 
-const avg1 = arr.reduce((acc, el, i) => {
-    console.log(`${acc}, ${el}, ${i}`);
-if(i != arr.length - 1){
-    return acc + el
-}else{
-    return (acc + el)/arr.length
-}
+//добавление массива
+users.push('Никита')//push возращает длинну массива.
+console.log(users);
+users.unshift('Вася')//Добавили в самое начало имя Вася
+console.log(users);
 
-}, 0)
-console.log(avg1);//Тот же результат просто  все написано внутри reduce.
+const el = users.pop()//Удаляет последний элемент массива
+console.log(el);
+console.log(users);
 
-console.log(arr.length);
+const el2 =users.shift()
+console.log(el2);//Вася был удален 
+console.log(users);
 
-const prices = [100, 500, 250, 150]
-
-const res = prices.reduce((acc, value)=>{
-    return acc + (value - 10)
-}, 0)
-
-console.log(res);
-
-const result = prices.reduce((acc, value, i)=> {
-    if(i === arr.length -1){
-        console.log('Все! Это был последний товар!');
-    }
-    return acc + (value - 10)
-}, 0)
-
-console.log(result);
