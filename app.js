@@ -1,28 +1,31 @@
-const tasks = ["Погулять", "Сделать домашку", "Купить хлеб"];
-function processTask(task){
-    tasks.push(task)
+//Упражнение Обновление списка задач 
+const tasks = ['Задача 1']
+ 
+
+function Add(task){
+    tasks.push(task)//Встает в конце 
 }
-processTask('Пойти на учебу')
 
-
-processTask('Пойти работать за партия!')
-console.log(tasks);
-function deleteTask(task){
-    const index = tasks.indexOf(task)
-    if(index !== '-1')
-    {
-        tasks.splice(index, 1)
+function remove(task){
+    const index = tasks.indexOf(task)// поиск элемента где он лежит.
+    if(index !== -1){
+        tasks.splice(index, 1)//выкидываемя элемент из массива "Если мне нужно выкинуть лишний кирпич из стены, мне нужно знать его номер (индекс) и сколько штук выкинуть (1)".
     }
 }
-deleteTask('Погулять')
-console.log(tasks);
-function prioritize (task){
-const index = tasks.indexOf(task);
-if(index !== -1){
-    const item = tasks.splice(index, 1)[0];
-    tasks.unshift(item);
-}
+
+function prioritaze(task){
+    const index = tasks.indexOf(task)
+    if(index !== -1){
+        const item = tasks.splice(index, 1)[0]
+        tasks.unshift(item)// добавляется в начало
+    }
 }
 
-prioritize('Купить хлеб')
+Add('Работать')
+Add('Учиться')
+Add('Пылесосить')
+console.log(tasks);
+remove('Учиться')
+console.log(tasks);
+prioritaze('Пылесосить')
 console.log(tasks);
