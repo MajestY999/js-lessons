@@ -1,5 +1,8 @@
-//Rest операторы
-const data = [1,2, 3, 4, 5, 6]
-const [one, two, ...other] = data
-console.log(one, two, ...other);// ... это рест оператор, так же есть спред оператор. рест это три точки то есть являются остальными данными чтобы не переписывать массив полностью 
-//Но если вызвать массив const [...others ] то просто выведем тот же массив
+const url = '<https://purpleschool.ru/course/javascript>'
+
+
+function disUrl(){
+    const [protocol, domain, ...path] = url.split('/')
+    return `${protocol}/${domain}/${path.join('/')}`
+}
+console.log(disUrl());
