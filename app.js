@@ -1,27 +1,30 @@
-// Цикл While
-// let i = 1
-// while(i < 5){
-// console.log(`Вывод - ${i}`);
-//  i++
+//Повторение объектов (знакомство с обьектами, Обращение к элементам.)
+const userArray = ['Вася', 'Пупкин', 24];
 
-// }
-
-const arr = [1, 4, 8, 7]
-
-for(let i = 0; i < arr.length; i++){
-    if(arr[i] > 5){
-        break;
-    }
-    console.log(arr[i])
+const user = {
+    name: 'Вася',
+    surnama: 'Пупкин',
+    age: 24,
+    skills: [
+        'Программирование', 
+        'Готовка'
+    ],
+    eduBasic: 'Школа 10',
+    eduPro: 'МФТИ'
 }
-let i = 0;
-while(arr[i] <= 5 && i < arr.length){
-    console.log(arr[i])
-    i++;
-}
+console.log(user.city)
+console.log(user.skills[0])//Будет вызван элемент Программирование
+console.log(user['skills'])//Будет тоже самое 
+const level = 'Pro'
+console.log(user['edu' + level])//МФТИ, но такое же обращение через точку не возможно только при образение через квадратные скобки
 
-let j = 0
-do{
-    console.log(j)
-    j++
-}while(j < 0 )
+//const res = prompt('Введите свойство');
+//console.log(user[res])//вызываем свойство обьекта
+user['city'] = 'Москва';
+console.log(user.city)
+
+
+user.age = 30;
+user['age'] = 30
+console.log(user)
+
