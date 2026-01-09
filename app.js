@@ -1,30 +1,19 @@
-//Повторение объектов (знакомство с обьектами, Обращение к элементам.)
-const userArray = ['Вася', 'Пупкин', 24];
+//Упражнение сортировка пользователей по возрасту
 
-const user = {
-    name: 'Вася',
-    surnama: 'Пупкин',
-    age: 24,
-    skills: [
-        'Программирование', 
-        'Готовка'
-    ],
-    eduBasic: 'Школа 10',
-    eduPro: 'МФТИ'
-}
-console.log(user.city)
-console.log(user.skills[0])//Будет вызван элемент Программирование
-console.log(user['skills'])//Будет тоже самое 
-const level = 'Pro'
-console.log(user['edu' + level])//МФТИ, но такое же обращение через точку не возможно только при образение через квадратные скобки
+const users = [  
+    { name: 'Вася', age: 30 },  
+    { name: 'Катя', age: 18 },  
+    { name: 'Аня', age: 40 },  
+    { name: 'Петя', age: 25 }
+];
 
-//const res = prompt('Введите свойство');
-//console.log(user[res])//вызываем свойство обьекта
-user['city'] = 'Москва';
-console.log(user.city)
+const res = users.sort(
+    (a, b)=> {
+        return a.age - b.age
+    }
+)
+
+console.log(users)
 
 
-user.age = 30;
-user['age'] = 30
-console.log(user)
 
