@@ -1,34 +1,15 @@
-// Упражнение - преобразование  объектов
-const users = [
-    {
-        name: 'Вася',
-        surname: 'Пупкин',
-        age: 30,
-        skills: ['Разработка', 'DevOps']
-    },
-    {
-        name: 'Катя',
-        surname: 'Белова',
-        age: 30,
-        skills: ['Дизайн']
+//Методы обьектов
+const user = {
+    name: 'Вася',
+    surname: 'Пупкин',
+    age: 24,
+    getFullName: function(){
+        console.log(this);
+        return this.name + ' ' + this.surname
     }
-]
-
-const fullNameAndSkillsCount = users.map((user)=>{
-   const fullName = user.name + ' ' + user.surname
-   const skillsCount = user.skills.length
-    return {
-        fullName, 
-        skillsCount
-    }
-    
-})
-
-console.log(fullNameAndSkillsCount );
-
-
-
-
-
+};
+console.log(user.getFullName());
+const arr = [1, 2]
+arr.sort();
 
 
