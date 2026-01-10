@@ -1,19 +1,34 @@
-//Упражнение сортировка пользователей по возрасту
-
-const users = [  
-    { name: 'Вася', age: 30 },  
-    { name: 'Катя', age: 18 },  
-    { name: 'Аня', age: 40 },  
-    { name: 'Петя', age: 25 }
-];
-
-const res = users.sort(
-    (a, b)=> {
-        return a.age - b.age
+// Упражнение - преобразование  объектов
+const users = [
+    {
+        name: 'Вася',
+        surname: 'Пупкин',
+        age: 30,
+        skills: ['Разработка', 'DevOps']
+    },
+    {
+        name: 'Катя',
+        surname: 'Белова',
+        age: 30,
+        skills: ['Дизайн']
     }
-)
+]
 
-console.log(users)
+const fullNameAndSkillsCount = users.map((user)=>{
+   const fullName = user.name + ' ' + user.surname
+   const skillsCount = user.skills.length
+    return {
+        fullName, 
+        skillsCount
+    }
+    
+})
+
+console.log(fullNameAndSkillsCount );
+
+
+
+
 
 
 
