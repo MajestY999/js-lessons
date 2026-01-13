@@ -1,11 +1,27 @@
+//Пример работы scope chain
 'use strict'
-//Он используется: 
-let myCoolVarible = 1;
-if(true){
-    myCoolVarible = 3
-} 
-console.log(myCoolVarible);//Не возможно объявить переменную без основного названия переменной или она пишется с ошибкой
-//Также нельзя использовать зарезевированные слова в виде переменных interface и т.д...
-//Также писать через delete
-//Дублировать параметр, использование with...
-//Дублирующие параметры тоже запрещены, так как аргументы функций должны называться по разному
+
+let successMessage = 'Успех';
+const user = {
+    name: 'Вася',
+    roles: []
+}
+function addRole(user, role){
+    if(role == 'admin'){
+        const message = 'Ошибка'
+        console.log(message);
+        return user
+    }
+    user.roles.push(role)
+    console.log(successMessage);
+// let successMessage = 'Ура' тут так сказать я объявляю новую переменную 
+// console.log(successMessage);
+    function logRoles(){
+        console.log(user.roles);
+    }
+    logRoles()
+    return user
+}
+
+console.log(addRole(user, 'admsin'));
+console.log(successMessage);//Тут будет ура
