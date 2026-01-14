@@ -1,27 +1,12 @@
-//Пример работы scope chain
-'use strict'
+//Поднятие и что это такое?
+//Поднятие в Javascript это возможность использовать определенные типы переменных до того, как они были рбъявлены. 
+//В первой же фазе сканирвования все переменные помещаются в объект окружения. 
+// также у функций перемнной var, также это возсожно у стрелочных функций, но все зависит от перменной var let const, и перемнные let и const не могут всплывать. А также  всплытие возможно и у фнкции и им является и сама функция
 
-let successMessage = 'Успех';
-const user = {
-    name: 'Вася',
-    roles: []
-}
-function addRole(user, role){
-    if(role == 'admin'){
-        const message = 'Ошибка'
-        console.log(message);
-        return user
-    }
-    user.roles.push(role)
-    console.log(successMessage);
-// let successMessage = 'Ура' тут так сказать я объявляю новую переменную 
-// console.log(successMessage);
-    function logRoles(){
-        console.log(user.roles);
-    }
-    logRoles()
-    return user
-}
+let    successMessage = 'Побида'
 
-console.log(addRole(user, 'admsin'));
-console.log(successMessage);//Тут будет ура
+function addRole(){
+    user.roles.push(role);//
+    let successMessage = 'Ура';// тут будет TDZ(Time Die Zone)
+    const role = 'test'
+}
