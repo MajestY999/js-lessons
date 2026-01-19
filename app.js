@@ -1,19 +1,45 @@
-//Пример поднятия
-addUser()
-const a = 3
-var b = 2;
-console.log(b);
+//Ключевое слово this
 
-function addUser(){
-  //  console.log('User added');
+//this это переменная которая создается внутри контекста исполнения. Она указывает на владельца этой функции.
+//this не является статичным и опеределяется только при вызове функции в зависимости от того, как она названа 
+// в стрелочной функции он работает this родительского scope то есть не во внешний а только внутри в функции он является undefined
+//в методе работает на объекте этого метода
+
+//Пример использования this 
+//'use strict'
+
+//console.log(this);//он равен тому ж еокну потому что получает те же данные и чем является приложение
+
+function addNum(num1, num2){
+    //console.log(this);//this = undefiend, это он выводит когда ипользуем strict mode 
+    return num1 + num2
 }
 
-addUser()
+addNum()
 
-
-const arr1 = ()=> {
-    console.log('arr1');
+const addNum2 = (num1, num2)=> {
+    console.log(this);
+    return num1 + num2
 }
-arr1()
 
-//Поднятие до функции работает как в моем примере, но с другими переменными или стрелочными функциями не получится
+//addNum2()
+//Как работает  this с объектами 
+
+const user = {
+    name: 'Вася',
+    surname: 'Пупкин',
+    getFullName: function(){
+        console.log(this);
+        return this.name + ' ' + this.surname
+    }
+}
+user.getFullName()
+//console.log(user.getFullName());
+const user2 = {
+    name: 'Марина',
+    surname: 'Катц'
+}
+
+user2.getFullName = user.getFullName;
+user2.getFullName()
+
