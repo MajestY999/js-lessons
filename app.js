@@ -1,27 +1,14 @@
-//Упражнение - объект в объекте
-const company = {
-    name: 'ООО Агро',
-    getNameCompany: function(){
-        return this.name
+//EOL для методов
+
+const b = 1
+
+const a = {
+    b,
+    getB: function(){
+      return this.b  
     },
-    empoloyees: [
-        {name: 'Света',
-           getName: function () {
-            return this.name
-           }
-        }
-    ],
-    ceo:  {
-        name: 'Вася',
-        getNameCeo(){
-        return this.name
+    getBAlt(){//Так будет удобнее и лучше так как все разработчики так и пишут.
+        return this.b
     }
-    },
-    
-    
 }
-
-
-console.log(company.getNameCompany());
-console.log(company.empoloyees.map(employ => employ.getName()));
-console.log(`Ооснователь: ${company.ceo.getNameCeo()}`);
+console.log(a.getBAlt());//1 тот же результат что  и с getB
