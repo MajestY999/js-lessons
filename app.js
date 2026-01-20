@@ -1,17 +1,27 @@
-//Argument
-'use strict'
-
-function sumNum(num1, num2){
-    console.log(this);
-    console.log(arguments);
-    return num1 + num2
+//Упражнение - объект в объекте
+const company = {
+    name: 'ООО Агро',
+    getNameCompany: function(){
+        return this.name
+    },
+    empoloyees: [
+        {name: 'Света',
+           getName: function () {
+            return this.name
+           }
+        }
+    ],
+    ceo:  {
+        name: 'Вася',
+        getNameCeo(){
+        return this.name
+    }
+    },
+    
+    
 }
 
-console.log(sumNum(1, 4));
 
-
-const sumNumArr = (num1, num2)=> {
- return num1 + num2
-}
-
-console.log(sumNumArr(1, 4));
+console.log(company.getNameCompany());
+console.log(company.empoloyees.map(employ => employ.getName()));
+console.log(`Ооснователь: ${company.ceo.getNameCeo()}`);
