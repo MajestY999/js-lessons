@@ -1,18 +1,19 @@
-//Упражнение - упраление this
+//IIFE
+'use strict'
+//Immediately Invoked Function Expression (Немедленно Вызываемое Функциональное Выражение) — это шаблон в JavaScript, 
+// представляющий собой функцию, которая выполняется сразу же после её создания,
+//  часто для создания локальной области видимости и изоляции переменных. 
+//Но его не используют так часто который использовали для инкопсуляции 
 
-const user = {
-  login: 'example@mail.com',
-  password: '12345'
-};
-
-function removePassword(reset) {
-  if (reset) {
-    this.password = undefined;
-  } else {
-    this.password = "1";
-  }
+function init(){
+  console.log('Start');
 }
 
-const resetPasswordUser =  removePassword.bind(user)
-resetPasswordUser(true)
-console.log(user);
+init();
+
+(function(){
+  console.log('Start IIFO');
+  const a = 1
+  console.log(a);//
+})();
+//console.log(a);Тут будет ошибка так как у нас она как бы замкнута и мы не можем из вне чтото вывести наружу 
