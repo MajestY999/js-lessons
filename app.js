@@ -1,22 +1,18 @@
-//bind
-'use strict'
+//Упражнение - упраление this
 
-const audi = {
-    make: 'Audi',
-    model: 'A3', 
-    damages: []
+const user = {
+  login: 'example@mail.com',
+  password: '12345'
+};
+
+function removePassword(reset) {
+  if (reset) {
+    this.password = undefined;
+  } else {
+    this.password = "1";
+  }
 }
 
-const carManipulations = {
-    addDamage(part, rate){
-        this.damages.push({part, rate})
-        console.log(`Добавление повреждений на ${this.make} ${this.model}`);
-    }
-}
-
-const addDamageAudi = carManipulations.addDamage.bind(audi);
-addDamageAudi('Крыло', 3)
-
-const addDamageAudiRoof = carManipulations.addDamage.bind(audi, 'Крыша');
-addDamageAudiRoof(5);
-console.log(audi);
+const resetPasswordUser =  removePassword.bind(user)
+resetPasswordUser(true)
+console.log(user);
