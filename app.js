@@ -1,12 +1,24 @@
-//Выбор и манипуляция с элементами 
 'use strict'
-// console.log(document);
-// addEventListener('load', ()=> {
-//     console.log(document);
+//обработка нажатий
+// document.querySelector('.button').addEventListener('click', function(e){
+//     //console.log(e); //детальная информация что произошло. Обработчик событий в каком-то смысле
+//     const input = document.querySelector('.input').value
+//     if(!input){
+//         return
+//     }
+//     console.log(input);
+//     document.querySelector('.panel').innerText = input;
+//     document.querySelector('.input').value = ' '
 // })
-//console.log(document.querySelector('panel'));//выбор по css селектору какого либо элемента 
-const panelText = document.querySelector('.panel').innerText;
-console.log(panelText);
-document.querySelector('.panel').innerText = 'New text'
-document.querySelector('.input').value = 'Text'
 
+function changeClick(){
+    const input = document.querySelector('.input').value
+    if(!input){
+        return
+    }
+    console.log(input);
+    document.querySelector('.panel').innerText = input;
+    document.querySelector('.input').value = ' '
+}
+
+//Как вызвать соббытия чтобы добавить все что было до 
