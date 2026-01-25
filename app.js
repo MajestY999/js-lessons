@@ -1,24 +1,28 @@
-'use strict'
-//обработка нажатий
-// document.querySelector('.button').addEventListener('click', function(e){
-//     //console.log(e); //детальная информация что произошло. Обработчик событий в каком-то смысле
-//     const input = document.querySelector('.input').value
-//     if(!input){
-//         return
-//     }
-//     console.log(input);
-//     document.querySelector('.panel').innerText = input;
-//     document.querySelector('.input').value = ' '
-// })
+//Обработка событий клавиатуры.
 
-function changeClick(){
-    const input = document.querySelector('.input').value
+function submitForm(){
+    const input = document.querySelector('.input').value;
     if(!input){
-        return
+        return;
     }
-    console.log(input);
     document.querySelector('.panel').innerText = input;
     document.querySelector('.input').value = ' '
 }
 
-//Как вызвать соббытия чтобы добавить все что было до 
+
+// function changeClick(){
+//     submitForm()
+// }
+
+function inputChanged(e){
+if(e.code == 'Enter'){
+  submitForm()
+}
+}
+
+// document.querySelector('.input').addEventListener('keydown', (e)=>{  //используем e как сокращение слова event 
+//     if(e.code == 'Enter'){
+//          submitForm()
+//     }
+   
+// })
