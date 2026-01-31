@@ -18,12 +18,10 @@ if(e.code == 'Enter'){
     submitForm()
 }
 }
-//создание html на лету
-const panelText = 'Панель'
-const newElement = document.createElement('div');
-newElement.setAttribute('user-id', 1);
-newElement.classList.add('panel');
-newElement.innerText = 'Button';
-newElement.innerHTML = `<button class=${panelText}">${panelText}</button>`
-document.querySelector('.test').appendChild(newElement);
+//JSON
 
+const obj = JSON.parse('{"a" : 1}') //Натация каких либо объектов и если бы наше число было было бы строкой  то и в объекте он тоже строкой была бы. 
+console.log(obj);
+
+const str = JSON.stringify(obj)
+console.log(str);//тут как раз и по названию понятно что берет объект и преобразует его в строку
